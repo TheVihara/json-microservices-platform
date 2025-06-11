@@ -1,5 +1,7 @@
 package net.unnamed.common.packet;
 
-public interface Packet {
+import com.google.protobuf.MessageLite;
+
+public interface Packet extends MessageLite {
     String getId();
 }

@@ -1,0 +1,3 @@
+name: "Permission"
+description: "Manages permissions with LuckPerms integration"
+main-class: "net.unnamed.service.permission.PermissionService"

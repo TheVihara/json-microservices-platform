@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package net.unnamed.command.api.proto;
+
+message CommandInfo {
+  string name = 1;
+  repeated string aliases = 2;
+  string description = 3;
+  string serviceName = 4;
+  bool enabled = 5;
+}
+
+message RemoveCommand {
+  string name = 1;
+}
+
+message DisableCommand {
+  string name = 1;
+}
+
+message EnableCommand {
+  string name = 2;
+}
+
+message ExecuteCommand {
+  string uuid = 1;
+  repeated string args = 2;
+}

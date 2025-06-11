@@ -1,3 +1,10 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
 rootProject.name = "unnamed-platform"
 include("common")
 include("service")
@@ -24,3 +31,5 @@ include("service:player")
 findProject(":service:player")?.name = "player"
 include("service:command")
 findProject(":service:command")?.name = "command"
+include("service:command:api")
+findProject(":service:command:api")?.name = "api"
