@@ -33,3 +33,5 @@ include("service:command")
 findProject(":service:command")?.name = "command"
 include("service:command:api")
 findProject(":service:command:api")?.name = "api"
+include("service:player:api")
+findProject(":service:player:api")?.name = "api"

@@ -1,5 +1,6 @@
 package net.unnamed.service.common;
 
+import net.unnamed.common.nats.NatsManager;
 import net.unnamed.common.packet.PacketRegistry;
 
 import java.util.logging.Logger;
@@ -23,6 +24,15 @@ public abstract class PlatformService implements Service {
         this.packetRegistry = new PacketRegistry();
         this.name = null;
         this.description = null;
+    }
+
+    public final void load() {
+        NatsManager.INSTANCE.init();
+        onLoad();
+    }
+
+    public void onInput(String input) {
+
     }
 
     @Override

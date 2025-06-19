@@ -1,3 +1,4 @@
+/*
 package net.unnamed.service.command.listener;
 
 import net.unnamed.command.api.proto.Command;
@@ -16,3 +17,4 @@ public class EnableCommandListener implements PacketListener<Command.EnableComma
         commandRegistry.enableCommand(message.getName());
     }
 }
+*/

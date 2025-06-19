@@ -2,7 +2,9 @@ subprojects {
     apply(plugin = "java-library")
 
     dependencies {
-        "implementation"(project(":service:common"))
+        if (project.path != ":service:common") {
+            "implementation"(project(":service:common"))
+        }
     }
 
     tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {

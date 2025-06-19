@@ -1,0 +1,3 @@
+name: "Player"
+description: "Handles player registry, managing"
+main-class: "net.unnamed.service.player.PlayerService"
