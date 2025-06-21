@@ -1,7 +1,7 @@
 package net.unnamed.common;
 
-import java.util.logging.Logger;
+import net.unnamed.common.logging.PlatformLogger;
 
 public interface ClassInstance {
-    Logger getLogger();
+    PlatformLogger getLogger();
 }

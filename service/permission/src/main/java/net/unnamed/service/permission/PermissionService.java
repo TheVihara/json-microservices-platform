@@ -17,12 +17,12 @@ public class PermissionService extends PlatformService implements Extension {
 
 
     @Override
-    public void load() {
+    public void unload() {
 
     }
 
     @Override
-    public void unload() {
+    public void onLoad() {
 
     }
 }
