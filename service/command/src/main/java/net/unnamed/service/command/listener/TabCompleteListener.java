@@ -43,7 +43,6 @@ public class TabCompleteListener implements PacketListener<TabCompletePacket> {
 
             // Send back the response
             NatsManager.INSTANCE.respond(packet.getOriginalMessage(), response);
-            System.out.println("SENDING BACK RESPONSE");
         });
     }
 }

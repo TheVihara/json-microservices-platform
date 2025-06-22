@@ -4,8 +4,12 @@ import de.bsommerfeld.jshepherd.annotation.Key;
 import de.bsommerfeld.jshepherd.core.ConfigurablePojo;
 
 public class ServiceConfig extends ConfigurablePojo<ServiceConfig> {
+    @Key("name")
     private String name;
+
+    @Key("description")
     private String description;
+
     @Key("main-class")
     private String mainClass;
 

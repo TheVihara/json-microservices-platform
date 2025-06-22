@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/minecraft" />
+            <option value="$PROJECT_DIR$/minecraft/bukkit" />
+            <option value="$PROJECT_DIR$/minecraft/velocity" />
+            <option value="$PROJECT_DIR$/service" />
+            <option value="$PROJECT_DIR$/service/auth" />
+            <option value="$PROJECT_DIR$/service/command" />
+            <option value="$PROJECT_DIR$/service/command/api" />
+            <option value="$PROJECT_DIR$/service/common" />
+            <option value="$PROJECT_DIR$/service/deploy" />
+            <option value="$PROJECT_DIR$/service/friend" />
+            <option value="$PROJECT_DIR$/service/party" />
+            <option value="$PROJECT_DIR$/service/permission" />
+            <option value="$PROJECT_DIR$/service/player" />
+            <option value="$PROJECT_DIR$/service/player/api" />
+            <option value="$PROJECT_DIR$/service/punishment" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

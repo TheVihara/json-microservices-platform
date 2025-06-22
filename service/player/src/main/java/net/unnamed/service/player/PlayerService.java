@@ -21,8 +21,6 @@ public class PlayerService extends PlatformService {
 
     @Override
     public void onLoad() {
-        logger.info("Loading player service");
-
         packetRegistry.registerPacket(ExecuteCommandPacket.ID, ExecuteCommandPacket.class);
         packetRegistry.registerPacket(TabCompletePacket.ID, TabCompletePacket.class);
 
@@ -80,7 +78,7 @@ public class PlayerService extends PlatformService {
                         true
                 );
 
-                logger.info("Publishing legacy command " + JSON.toJSONString(legacyInfo));
+                logger.info("Publishing command {}", legacyInfo.getName());
                 NatsManager.INSTANCE.publish("command.packets", new RegisterCommandPacket(legacyInfo));
             }
         }

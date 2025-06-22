@@ -8,8 +8,8 @@ import net.unnamed.common.packet.PacketRegistry;
 public abstract class PlatformService implements Service {
     protected final PlatformLogger logger;
     protected final PacketRegistry packetRegistry;
-    private final String name;
-    private final String description;
+    private String name;
+    private String description;
     private boolean enabled = true;
 
     public PlatformService(String name, String description) {
@@ -27,8 +27,12 @@ public abstract class PlatformService implements Service {
     }
 
     public final void load() {
+        logger.info("Loading " + name + " service...");
+        long time = System.currentTimeMillis();
         NatsManager.INSTANCE.init();
         onLoad();
+        time = System.currentTimeMillis() - time;
+        logger.info("Loaded {} service in {}ms", name, time);
     }
 
     public void onInput(String input) {
@@ -58,6 +62,14 @@ public abstract class PlatformService implements Service {
     @Override
     public PlatformLogger getLogger() {
         return logger;
+    }
+
+    protected void setName(String name) {
+        this.name = name;
+    }
+
+    protected void setDescription(String description) {
+        this.description = description;
     }
 
     public void setEnabled(boolean enabled) {

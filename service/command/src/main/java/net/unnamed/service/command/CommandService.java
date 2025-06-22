@@ -19,8 +19,6 @@ public class CommandService extends PlatformService {
 
     @Override
     public void onLoad() {
-        logger.info("Loading command service");
-
         packetRegistry.registerPacket(ExecuteCommandPacket.ID, ExecuteCommandPacket.class);
         packetRegistry.registerPacket(RegisterCommandPacket.ID, RegisterCommandPacket.class);
         packetRegistry.registerPacket(TabCompletePacket.ID, TabCompletePacket.class);

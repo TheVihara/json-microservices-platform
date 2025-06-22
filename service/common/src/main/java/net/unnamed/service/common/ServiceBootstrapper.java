@@ -27,6 +27,9 @@ public class ServiceBootstrapper {
                 throw new IllegalArgumentException("Main class does not implement PlatformService: " + serviceConfig.getMainClass());
             }
 
+            service.setName(serviceConfig.getName());
+            service.setDescription(serviceConfig.getDescription());
+
             service.load();
 
             CountDownLatch shutdownLatch = new CountDownLatch(1);

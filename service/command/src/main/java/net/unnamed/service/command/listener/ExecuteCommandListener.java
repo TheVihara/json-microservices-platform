@@ -7,7 +7,6 @@ import net.unnamed.service.command.api.CommandInfo;
 import net.unnamed.service.command.api.CommandResponse;
 import net.unnamed.service.command.api.packet.CommandResponsePacket;
 import net.unnamed.service.command.api.packet.ExecuteCommandPacket;
-import net.unnamed.service.command.api.packet.TabCompleteResponsePacket;
 
 import java.time.Duration;
 
@@ -40,9 +39,6 @@ public class ExecuteCommandListener implements PacketListener<ExecuteCommandPack
             return;
         }
 
-        System.out.println("Executing command: " + commandName);
-        System.out.println("Sending to: " + commandInfo.getService() + ".commands");
-
         // Forward to service for legacy commands
         NatsManager.INSTANCE.request(
                 commandInfo.getService() + ".commands",
@@ -58,7 +54,6 @@ public class ExecuteCommandListener implements PacketListener<ExecuteCommandPack
 
             // Send back the response
             NatsManager.INSTANCE.respond(packet.getOriginalMessage(), response);
-            System.out.println("SENDING BACK RESPONSE");
         });
     }
 }

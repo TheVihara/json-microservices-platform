@@ -15,6 +15,5 @@ public class RegisterCommandListener implements PacketListener<RegisterCommandPa
     @Override
     public void onPacket(RegisterCommandPacket packet) {
         commandRegistry.registerCommand(packet.getCommandInfo());
-        System.out.println("Registered command: " + JSON.toJSONString(packet.getCommandInfo()));
     }
 }
