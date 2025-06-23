@@ -1,3 +1,5 @@
 subprojects {
-    apply(plugin = "java-library")
+    if (project.name != ":paper") {
+        apply(plugin = "java-library")
+    }
 }
