@@ -1,0 +1,5 @@
+name: PaperConnector
+version: '1.0'
+main: net.unnamed.minecraft.paper.connector.PaperConnectorPlugin
+description: PaperConnector
+api-version: '1.21.4'

@@ -1,3 +1,8 @@
-subprojects {
-    apply(plugin = "java-library")
+plugins {
+    id("java")
+}
+
+dependencies {
+    implementation(project(":service:player:api"))
+    compileOnly("com.github.MilkBowl:VaultAPI:1.7")
 }

@@ -1,0 +1,11 @@
+name: Essentials
+version: '1.0'
+main: net.unnamed.minecraft.paper.essentials.EssentialsPlugin
+description: Essentials
+api-version: '1.21.4'
+dependencies:
+  bootstrap:
+    PaperConnector:
+      load: BEFORE
+      required: true
+      join-classpath: true

@@ -7,5 +7,5 @@ repositories {
 }
 
 dependencies {
-    //api(project(":service:gui:api"))
+    api(project(":service:gui:api"))
 }

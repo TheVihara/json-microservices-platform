@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/paper.iml" filepath="$PROJECT_DIR$/paper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minecraft/essentials/unnamed-platform.minecraft.essentials.iml" filepath="$PROJECT_DIR$/.idea/modules/minecraft/essentials/unnamed-platform.minecraft.essentials.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minecraft/essentials/unnamed-platform.minecraft.essentials.main.iml" filepath="$PROJECT_DIR$/.idea/modules/minecraft/essentials/unnamed-platform.minecraft.essentials.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minecraft/essentials/unnamed-platform.minecraft.essentials.test.iml" filepath="$PROJECT_DIR$/.idea/modules/minecraft/essentials/unnamed-platform.minecraft.essentials.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minecraft/bukkit/unnamed-platform.minecraft.paper-connector.iml" filepath="$PROJECT_DIR$/.idea/modules/minecraft/bukkit/unnamed-platform.minecraft.paper-connector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minecraft/paper-connector/unnamed-platform.minecraft.paper-connector.main.iml" filepath="$PROJECT_DIR$/.idea/modules/minecraft/paper-connector/unnamed-platform.minecraft.paper-connector.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minecraft/paper-connector/unnamed-platform.minecraft.paper-connector.test.iml" filepath="$PROJECT_DIR$/.idea/modules/minecraft/paper-connector/unnamed-platform.minecraft.paper-connector.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/minecraft/paper/essentials/unnamed-platform.minecraft.paper.essentials.main.iml" filepath="$PROJECT_DIR$/.idea/modules/minecraft/paper/essentials/unnamed-platform.minecraft.paper.essentials.main.iml" />
+    </modules>
+  </component>
+</project>

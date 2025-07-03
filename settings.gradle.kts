@@ -39,3 +39,7 @@ include("minecraft:paper:essentials")
 findProject(":minecraft:paper:essentials")?.name = "essentials"
 include("minecraft:paper")
 findProject(":minecraft:paper")?.name = "paper"
+include("service:gui")
+findProject(":service:gui")?.name = "gui"
+include("service:gui:api")
+findProject(":service:gui:api")?.name = "api"
