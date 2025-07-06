@@ -95,7 +95,7 @@ public class EssentialsPlayer extends OfflineEssentialsPlayer implements PlayerB
                         if (rs.next()) {
                             UUID uuid = UUID.fromString(rs.getString("uuid"));
                             String name = rs.getString("name");
-                            return new EssentialsPlayer(uuid, name);
+                            return new EssentialsPlayer(id, uuid, name);
                         }
                     }
                 } catch (SQLException e) {
@@ -115,7 +115,7 @@ public class EssentialsPlayer extends OfflineEssentialsPlayer implements PlayerB
                         if (rs.next()) {
                             Integer id = rs.getInt("id");
                             String name = rs.getString("name");
-                            return new EssentialsPlayer(uuid, name);
+                            return new EssentialsPlayer(id, uuid, name);
                         }
                     }
                 } catch (SQLException e) {
@@ -130,13 +130,14 @@ public class EssentialsPlayer extends OfflineEssentialsPlayer implements PlayerB
             return CompletableFuture.supplyAsync(() -> {
                 List<EssentialsPlayer> list = new ArrayList<>();
                 try (Connection connection = dataSource.getConnection();
-                     PreparedStatement ps = connection.prepareStatement("SELECT uuid, name FROM essentials_player");
+                     PreparedStatement ps = connection.prepareStatement("SELECT id, uuid, name FROM essentials_player");
                      ResultSet rs = ps.executeQuery()) {
 
                     while (rs.next()) {
+                        Integer id = rs.getInt("id");
                         UUID uuid = UUID.fromString(rs.getString("uuid"));
                         String name = rs.getString("name");
-                        list.add(new EssentialsPlayer(uuid, name));
+                        list.add(new EssentialsPlayer(id, uuid, name));
                     }
                 } catch (SQLException e) {
                     e.printStackTrace();

@@ -27,11 +27,12 @@ public class PlayerManager {
     private final ConcurrentHashMap<UUID, EssentialsPlayer> players = new ConcurrentHashMap<>();
 
     public PlayerManager(EssentialsScheduler scheduler,
-                         HikariDataSource dataSource,
-                         Consumer<Listener> registrar) {
+                         HikariDataSource dataSource) {
         this.scheduler = scheduler;
         this.dao = new EssentialsPlayer.Dao(dataSource);
+    }
 
+    public void load(Consumer<Listener> registrar) {
         registrar.accept(new CacheListener(this));
     }
 

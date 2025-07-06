@@ -5,7 +5,7 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="gradleHome" value="C:\Gradle\gradle-8.12" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -19,11 +19,14 @@
             <option value="$PROJECT_DIR$/service/auth" />
             <option value="$PROJECT_DIR$/service/command" />
             <option value="$PROJECT_DIR$/service/command/api" />
+            <option value="$PROJECT_DIR$/service/command/command-paper-module" />
             <option value="$PROJECT_DIR$/service/common" />
             <option value="$PROJECT_DIR$/service/deploy" />
             <option value="$PROJECT_DIR$/service/friend" />
             <option value="$PROJECT_DIR$/service/gui" />
             <option value="$PROJECT_DIR$/service/gui/api" />
+            <option value="$PROJECT_DIR$/service/gui/gui-paper-module" />
+            <option value="$PROJECT_DIR$/service/pack" />
             <option value="$PROJECT_DIR$/service/party" />
             <option value="$PROJECT_DIR$/service/permission" />
             <option value="$PROJECT_DIR$/service/player" />

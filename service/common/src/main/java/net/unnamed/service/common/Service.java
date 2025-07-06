@@ -9,4 +9,5 @@ public interface Service extends ClassInstance {
     String getDescription();
     boolean isEnabled();
     void onLoad();
+    void onStop();
 }

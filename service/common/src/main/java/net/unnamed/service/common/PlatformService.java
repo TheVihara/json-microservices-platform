@@ -1,11 +1,13 @@
 package net.unnamed.service.common;
 
+import net.unnamed.common.config.CustomYamlPersistenceDelegateFactory;
 import net.unnamed.common.logging.ConsoleLogger;
 import net.unnamed.common.logging.PlatformLogger;
 import net.unnamed.common.nats.NatsManager;
 import net.unnamed.common.packet.PacketRegistry;
 
 public abstract class PlatformService implements Service {
+    private final CustomYamlPersistenceDelegateFactory persistenceDelegateFactory = new CustomYamlPersistenceDelegateFactory();
     protected final PlatformLogger logger;
     protected final PacketRegistry packetRegistry;
     private String name;
@@ -33,6 +35,14 @@ public abstract class PlatformService implements Service {
         onLoad();
         time = System.currentTimeMillis() - time;
         logger.info("Loaded {} service in {}ms", name, time);
+    }
+
+    public final void stop() {
+        logger.info("Stopping " + name + " service...");
+        long time = System.currentTimeMillis();
+        onStop();
+        time = System.currentTimeMillis() - time;
+        logger.info("Stopped {} service in {}ms", name, time);
     }
 
     public void onInput(String input) {

@@ -40,6 +40,7 @@ public class ServiceBootstrapper {
             Runtime.getRuntime().addShutdownHook(new Thread(() -> {
                 System.out.println("Shutdown signal received. Stopping service...");
                 try {
+                    service.stop();
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/paper.iml" filepath="$PROJECT_DIR$/paper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/unnamed-platform.common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/common/unnamed-platform.common.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/minecraft/essentials/unnamed-platform.minecraft.essentials.iml" filepath="$PROJECT_DIR$/.idea/modules/minecraft/essentials/unnamed-platform.minecraft.essentials.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/minecraft/essentials/unnamed-platform.minecraft.essentials.main.iml" filepath="$PROJECT_DIR$/.idea/modules/minecraft/essentials/unnamed-platform.minecraft.essentials.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/minecraft/essentials/unnamed-platform.minecraft.essentials.test.iml" filepath="$PROJECT_DIR$/.idea/modules/minecraft/essentials/unnamed-platform.minecraft.essentials.test.iml" />

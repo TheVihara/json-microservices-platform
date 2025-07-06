@@ -34,6 +34,11 @@ public class PlayerService extends PlatformService {
     }
 
     @Override
+    public void onStop() {
+
+    }
+
+    @Override
     public void onInput(String input) {
         if (input == null || input.isBlank()) return;
 

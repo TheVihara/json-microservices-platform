@@ -1,10 +1,8 @@
 package net.unnamed.service.gui.api.impl;
 
-import net.unnamed.service.gui.api.Gui;
-import net.unnamed.service.gui.api.InventoryViewer;
 import net.unnamed.service.gui.api.handler.SlotHandler;
-import net.unnamed.service.gui.api.inventory.Inventory;
-import net.unnamed.service.gui.api.inventory.PlayerInventory;
+import net.unnamed.service.gui.api.inventory.ServiceInventory;
+import net.unnamed.service.gui.api.inventory.PlayerServiceInventory;
 import net.unnamed.service.gui.api.slot.Slot;
 import org.antlr.v4.runtime.misc.Pair;
 
@@ -14,35 +12,35 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class ContainerGui extends CommonGui {
-    private final Inventory topInventory;
-    private final PlayerInventory bottomInventory;
+    private final ServiceInventory topServiceInventory;
+    private final PlayerServiceInventory bottomInventory;
 
-    public ContainerGui(Inventory topInventory, PlayerInventory bottomInventory) {
-        this.topInventory = topInventory;
+    public ContainerGui(ServiceInventory topServiceInventory, PlayerServiceInventory bottomInventory) {
+        this.topServiceInventory = topServiceInventory;
         this.bottomInventory = bottomInventory;
     }
 
     @Override
     public SlotHandler getSlotHandler() {
-        return new SlotHandlerImpl(topInventory, bottomInventory);
+        return new SlotHandlerImpl(topServiceInventory, bottomInventory);
     }
 
-    public Inventory getBottomInventory() {
+    public ServiceInventory getBottomInventory() {
         return bottomInventory;
     }
 
-    public Inventory getTopInventory() {
-        return topInventory;
+    public ServiceInventory getTopInventory() {
+        return topServiceInventory;
     }
 
     public static class SlotHandlerImpl implements SlotHandler {
         private final List<Map.Entry<Integer, Integer>> updatingSlots = new ArrayList<>();
         private final Map<Map.Entry<Integer, Integer>, Slot> slotCoords = new HashMap<>();
-        private final Inventory topInventory;
-        private final PlayerInventory bottomInventory;
+        private final ServiceInventory topServiceInventory;
+        private final PlayerServiceInventory bottomInventory;
 
-        public SlotHandlerImpl(Inventory topInventory, PlayerInventory bottomInventory) {
-            this.topInventory = topInventory;
+        public SlotHandlerImpl(ServiceInventory topServiceInventory, PlayerServiceInventory bottomInventory) {
+            this.topServiceInventory = topServiceInventory;
             this.bottomInventory = bottomInventory;
         }
 
@@ -62,14 +60,14 @@ public abstract class ContainerGui extends CommonGui {
         }
 
         @Override
-        public Pair<Integer, Inventory> findSlot(int x, int y) {
-            int topRows = topInventory.getRows();
+        public Pair<Integer, ServiceInventory> findSlot(int x, int y) {
+            int topRows = topServiceInventory.getRows();
             int bottomRows = bottomInventory.getRows();
 
             if (y < topRows) {
                 // In top inventory
-                int slotIndex = y * topInventory.getColumns() + x;
-                return new Pair<>(slotIndex, topInventory);
+                int slotIndex = y * topServiceInventory.getColumns() + x;
+                return new Pair<>(slotIndex, topServiceInventory);
             } else {
                 // In player inventory below
                 int relativeY = y - topRows;

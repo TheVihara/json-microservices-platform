@@ -1,6 +1,6 @@
 package net.unnamed.service.gui.api.handler;
 
-import net.unnamed.service.gui.api.inventory.Inventory;
+import net.unnamed.service.gui.api.inventory.ServiceInventory;
 import net.unnamed.service.gui.api.slot.Slot;
 
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public abstract class CommonSlotHandler<T extends Inventory> implements SlotHandler {
+public abstract class CommonSlotHandler<T extends ServiceInventory> implements SlotHandler {
     protected final T openedInventory;
     protected final List<Map.Entry<Integer, Integer>> updatingSlots = new ArrayList<>();
     protected final Map<Map.Entry<Integer, Integer>, Slot> slotCoords = new HashMap<>();
@@ -32,7 +32,7 @@ public abstract class CommonSlotHandler<T extends Inventory> implements SlotHand
         slotCoords.put(coords, slot);
     }
 
-    public Inventory getOpenedInventory() {
+    public ServiceInventory getOpenedInventory() {
         return openedInventory;
     }
 }

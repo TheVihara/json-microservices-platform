@@ -43,3 +43,7 @@ include("service:gui")
 findProject(":service:gui")?.name = "gui"
 include("service:gui:api")
 findProject(":service:gui:api")?.name = "api"
+
+include("service:gui:gui-paper-module")
+include("service:command:command-paper-module")
+include("service:pack")

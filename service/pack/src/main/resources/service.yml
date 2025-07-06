@@ -1,0 +1,3 @@
+name: "Pack"
+description: "Handles pack generation"
+main-class: "net.unnamed.service.pack.PackService"
