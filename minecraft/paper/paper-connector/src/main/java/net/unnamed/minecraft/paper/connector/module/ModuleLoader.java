@@ -242,11 +242,9 @@ public class ModuleLoader {
         // Configure the module if it's a ConnectorModule
         if (module instanceof ConnectorModule) {
             ConnectorModule connectorModule = (ConnectorModule) module;
-            connectorModule.setPlugin(plugin);
-
-            // Create and set module config
             ModuleConfig config = createModuleConfig(descriptor);
             connectorModule.setConfig(config);
+            connectorModule.setPlugin(plugin);
         }
 
         // Register the module (but don't enable it yet)

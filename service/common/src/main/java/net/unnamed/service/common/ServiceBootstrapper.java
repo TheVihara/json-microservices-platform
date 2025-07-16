@@ -1,6 +1,7 @@
 package net.unnamed.service.common;
 
 import de.bsommerfeld.jshepherd.core.ConfigurationLoader;
+import net.unnamed.common.config.CustomYamlPersistenceDelegateFactory;
 import net.unnamed.service.common.config.ServiceConfig;
 import net.unnamed.service.common.terminal.Terminal;
 
@@ -11,6 +12,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.concurrent.CountDownLatch;
 
 public class ServiceBootstrapper {
+    private static final CustomYamlPersistenceDelegateFactory persistenceDelegateFactory = new CustomYamlPersistenceDelegateFactory();
     private static ServiceConfig serviceConfig;
 
     public static void main(String[] args) {

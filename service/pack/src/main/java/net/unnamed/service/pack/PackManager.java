@@ -1,60 +1,62 @@
 package net.unnamed.service.pack;
 
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
+import net.kyori.adventure.key.Key;
 import net.unnamed.service.pack.factory.PackFactory;
-import net.unnamed.service.pack.factory.TextureFactory;
+import net.unnamed.service.pack.font.FontManager;
+import net.unnamed.service.pack.model.ModelManager;
+import net.unnamed.service.pack.texture.TextureManager;
 import team.unnamed.creative.ResourcePack;
-import team.unnamed.creative.texture.Texture;
+import team.unnamed.creative.lang.Language;
 
 import java.io.File;
 import java.nio.file.Path;
+import java.util.HashMap;
 
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class PackManager {
-    private final PackFactory packFactory = new PackFactory();
-    private final TextureFactory textureFactory = new TextureFactory();
-    private final Path dataFolder;
+    PackFactory packFactory = new PackFactory();
+    TextureManager textureManager;
+    FontManager fontManager;
+    ModelManager modelManager;
+    Path dataFolder;
 
     public PackManager(Path dataFolder) {
         this.dataFolder = dataFolder;
+
         if (!dataFolder.toFile().exists()) {
             dataFolder.toFile().mkdirs();
         }
+
+        this.textureManager = new TextureManager();
+        this.fontManager = new FontManager();
+        this.modelManager = new ModelManager(dataFolder);
     }
 
     public ResourcePack generatePack() {
         ResourcePack resourcePack = packFactory.createPack();
-        scanForTextures(resourcePack);
+        File packFolder = dataFolder.toFile();
+
+        if (packFolder.listFiles() == null) {
+            return null;
+        }
+
+        for (File file : packFolder.listFiles()) {
+            if (!file.isDirectory()) {
+                continue;
+            }
+            textureManager.scan(resourcePack, file.toPath());
+            fontManager.scan(resourcePack, file.toPath());
+        }
+
+        modelManager.scan(resourcePack);
+
+        HashMap<String, String> lang = new HashMap<>();
+        lang.put("container.inventory", "");
+        Language language = Language.language(Key.key("minecraft", "en_us"), lang);
+        resourcePack.language(language);
 
         return resourcePack;
-    }
-
-    public void scanForTextures(ResourcePack resourcePack) {
-        Path textureFolder = dataFolder.resolve("textures");
-        if (!textureFolder.toFile().exists()) {
-            textureFolder.toFile().mkdirs();
-            return;
-        }
-        File[] files = textureFolder.toFile().listFiles();
-        if (files == null) {
-            return;
-        }
-        scanForTextures(resourcePack, textureFolder, files);
-    }
-
-    private void scanForTextures(ResourcePack resourcePack, Path textureFolder, File[] files) {
-        for (File file : files) {
-            if (file.isDirectory()) {
-                File[] subFiles = file.listFiles();
-                if (subFiles == null) {
-                    continue;
-                }
-                scanForTextures(resourcePack, textureFolder, subFiles);
-            } else {
-                Path filePath = file.toPath();
-                Path relativePath = textureFolder.relativize(filePath);
-                String texturePath = relativePath.toString().replace(File.separatorChar, '/');
-                Texture foundTexture = textureFactory.createTexture("astopia", texturePath, file.getAbsolutePath());
-                resourcePack.texture(foundTexture);
-            }
-        }
     }
 }

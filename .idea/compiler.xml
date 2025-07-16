@@ -5,6 +5,7 @@
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.38/57f8f5e02e92a30fd21b80cbd426a4172b5f8e29/lombok-1.18.38.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.auto.service/auto-service/1.1.1/bfeb4c40087b49e23700f074807d3f2a6d36d2d1/auto-service-1.1.1.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.auto.service/auto-service-annotations/1.1.1/da12a15cd058ba90a0ff55357fb521161af4736d/auto-service-annotations-1.1.1.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.auto/auto-common/1.2.1/f6da26895f759010f5f170c8044e84c1b17ef83e/auto-common-1.2.1.jar" />
@@ -18,8 +19,38 @@
         </processorPath>
         <module name="unnamed-platform.common.main" />
       </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.38/57f8f5e02e92a30fd21b80cbd426a4172b5f8e29/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="unnamed-platform.service.command.main" />
+        <module name="unnamed-platform.minecraft.paper.container-module.main" />
+        <module name="unnamed-platform.service.command.command-paper-module.main" />
+        <module name="unnamed-platform.service.player.api.main" />
+        <module name="unnamed-platform.service.gui.api.main" />
+        <module name="unnamed-platform.service.party.main" />
+        <module name="unnamed-platform.service.pack.api.main" />
+        <module name="unnamed-platform.service.auth.main" />
+        <module name="unnamed-platform.service.deploy.main" />
+        <module name="unnamed-platform.service.punishment.main" />
+        <module name="unnamed-platform.service.gui.gui-paper-module.main" />
+        <module name="unnamed-platform.service.command.api.main" />
+        <module name="unnamed-platform.service.gui.main" />
+        <module name="unnamed-platform.service.common.main" />
+        <module name="unnamed-platform.service.permission.main" />
+        <module name="unnamed-platform.service.friend.main" />
+        <module name="unnamed-platform.minecraft.paper.essentials.main" />
+        <module name="unnamed-platform.minecraft.velocity-connector.main" />
+        <module name="unnamed-platform.service.pack.main" />
+        <module name="unnamed-platform.service.player.main" />
+        <module name="unnamed-platform.minecraft.paper.paper-connector.main" />
+        <module name="unnamed-platform.minecraft.paper.main" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="23">
+      <module name="unnamed-platform.minecraft.paper.mc-container-module.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper.mc-container-module.test" target="21" />
       <module name="unnamed-platform.service.command.paper-command-module" target="21" />
       <module name="unnamed-platform.service.command.paper-command-module.main" target="21" />
       <module name="unnamed-platform.service.command.paper-command-module.test" target="21" />

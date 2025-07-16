@@ -11,7 +11,7 @@ public class MySqlConfig extends ConfigurablePojo<MySqlConfig> {
     private String url = "jdbc:mysql://localhost:3306/minecraft";
 
     @Key("username")
-    private String username = "localhost";
+    private String username = "root";
 
     @Key("password")
     private String password = "password";

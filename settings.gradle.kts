@@ -47,3 +47,5 @@ findProject(":service:gui:api")?.name = "api"
 include("service:gui:gui-paper-module")
 include("service:command:command-paper-module")
 include("service:pack")
+include("minecraft:paper:container-module")
+include("service:pack:api")

@@ -22,11 +22,11 @@ public class PaperConnectorPlugin extends JavaPlugin implements ClassInstance {
     @Override
     public void onLoad() {
         //natsManager.init();
-        moduleManager.init(this);
     }
 
     @Override
     public void onEnable() {
+        moduleManager.init(this);
         moduleManager.enable(this);
     }
 

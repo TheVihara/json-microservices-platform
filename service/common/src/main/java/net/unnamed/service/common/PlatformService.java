@@ -7,7 +7,6 @@ import net.unnamed.common.nats.NatsManager;
 import net.unnamed.common.packet.PacketRegistry;
 
 public abstract class PlatformService implements Service {
-    private final CustomYamlPersistenceDelegateFactory persistenceDelegateFactory = new CustomYamlPersistenceDelegateFactory();
     protected final PlatformLogger logger;
     protected final PacketRegistry packetRegistry;
     private String name;

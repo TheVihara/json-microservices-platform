@@ -1,0 +1,3 @@
+id: Container
+main: net.unnamed.minecraft.paper.module.container.ContainerModule
+version: 1.0

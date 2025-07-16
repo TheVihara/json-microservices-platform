@@ -7,6 +7,7 @@ import de.bsommerfeld.jshepherd.core.PersistenceDelegateFactory;
 import de.bsommerfeld.jshepherd.core.PersistenceDelegateFactoryRegistry;
 
 import java.nio.file.Path;
+import java.util.logging.Logger;
 
 /**
  * A factory class for creating YAML-specific persistence delegates. This implementation of {@code

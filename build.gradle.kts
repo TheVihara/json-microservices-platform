@@ -17,6 +17,7 @@ subprojects {
                 name = "papermc"
                 url = uri("https://repo.papermc.io/repository/maven-public/")
             }
+            maven { url = uri("https://repo.extendedclip.com/releases/") }
         }
 
         dependencies {
@@ -25,8 +26,10 @@ subprojects {
             }
             "compileOnly"("com.github.bsommerfeld.jshepherd:core:3.3.1")
             "compileOnly"("com.github.bsommerfeld.jshepherd:yaml:3.3.1")
+            "compileOnly"("org.projectlombok:lombok:1.18.38")
             "implementation"("org.yaml:snakeyaml:2.4")
-            "implementation"("org.capnproto:runtime:0.1.16")
+
+            "annotationProcessor"("org.projectlombok:lombok:1.18.38")
         }
 
 

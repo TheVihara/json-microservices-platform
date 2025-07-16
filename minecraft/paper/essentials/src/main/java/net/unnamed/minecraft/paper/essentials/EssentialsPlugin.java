@@ -2,7 +2,6 @@ package net.unnamed.minecraft.paper.essentials;
 
 import de.bsommerfeld.jshepherd.core.ConfigurationLoader;
 import net.milkbowl.vault.economy.Economy;
-import net.unnamed.common.config.CustomYamlPersistenceDelegateFactory;
 import net.unnamed.common.database.mysql.MySqlDatabase;
 import net.unnamed.minecraft.paper.essentials.chat.ChatManager;
 import net.unnamed.minecraft.paper.essentials.economy.VaultEconomyProvider;

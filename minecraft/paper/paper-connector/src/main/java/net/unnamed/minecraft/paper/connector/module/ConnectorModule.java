@@ -2,8 +2,11 @@ package net.unnamed.minecraft.paper.connector.module;
 
 import net.unnamed.minecraft.paper.connector.PaperConnectorPlugin;
 
+import java.nio.file.Path;
+
 public abstract class ConnectorModule implements Module {
     protected PaperConnectorPlugin plugin;
+    protected Path dataFolder;
     protected ModuleConfig config;
 
     @Override
@@ -22,5 +25,7 @@ public abstract class ConnectorModule implements Module {
 
     public void setPlugin(PaperConnectorPlugin plugin) {
         this.plugin = plugin;
+        dataFolder = plugin.getDataFolder().toPath().resolve("modules").resolve(config.getId().toLowerCase());
+        dataFolder.toFile().mkdirs();
     }
 }
