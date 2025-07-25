@@ -6,7 +6,8 @@ import net.unnamed.service.command.api.CommandSender;
 import java.net.SocketAddress;
 import java.util.UUID;
 
-public interface PlayerBase extends CommandSender {
+public interface PlayerBase<T> extends CommandSender {
+    T getHandle();
     UUID getUuid();
     String getName();
     SocketAddress getSocketAddress();

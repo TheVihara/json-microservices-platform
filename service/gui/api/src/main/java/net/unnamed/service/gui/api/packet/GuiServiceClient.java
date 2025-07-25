@@ -1,8 +1,6 @@
 package net.unnamed.service.gui.api.packet;
 
-import com.alibaba.fastjson2.JSON;
 import net.unnamed.common.nats.NatsManager;
-import net.unnamed.service.gui.api.Gui;
 import net.unnamed.service.gui.api.item.Item;
 import net.unnamed.service.player.api.PlayerBase;
 
@@ -21,16 +19,16 @@ public class GuiServiceClient {
     /**
      * Opens a GUI for a player
      */
-    public CompletableFuture<Boolean> openGui(PlayerBase player, Gui gui, String serverContext) {
+/*    public CompletableFuture<Boolean> openGui(PlayerBase player, Gui gui, String serverContext) {
         String guiData = serializer.serializeGui(gui);
 
-        OpenGuiPacket packet = new OpenGuiPacket(
+*//*        OpenGuiPacket packet = new OpenGuiPacket(
             player.getUuid(), 
             player.getName(), 
             gui.getClass().getSimpleName(), 
             guiData, 
             serverContext
-        );
+        );*//*
 
         return NatsManager.INSTANCE.request(
             GUI_SERVICE_CHANNEL,
@@ -38,14 +36,14 @@ public class GuiServiceClient {
             GuiResponsePacket.class,
             Duration.ofSeconds(5)
         ).thenApply(GuiResponsePacket::isSuccess);
-    }
+    }*/
 
     /**
      * Opens a GUI for a player (no server context)
      */
-    public CompletableFuture<Boolean> openGui(PlayerBase player, Gui gui) {
+/*    public CompletableFuture<Boolean> openGui(PlayerBase player, Gui gui) {
         return openGui(player, gui, null);
-    }
+    }*/
 
     /**
      * Sets a single item in the player's currently opened GUI

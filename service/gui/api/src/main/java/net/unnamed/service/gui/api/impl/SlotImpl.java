@@ -1,38 +1,66 @@
 package net.unnamed.service.gui.api.impl;
 
 import com.alibaba.fastjson2.JSONObject;
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
+import lombok.experimental.NonFinal;
+import net.unnamed.service.gui.api.Coords;
 import net.unnamed.service.gui.api.action.Click;
+import net.unnamed.service.gui.api.action.DefaultClick;
 import net.unnamed.service.gui.api.inventory.ServiceInventory;
 import net.unnamed.service.gui.api.item.Item;
+import net.unnamed.service.gui.api.layer.InventoryLayer;
 import net.unnamed.service.gui.api.slot.Slot;
 
 import java.util.AbstractMap;
 import java.util.Map;
+import java.util.function.Consumer;
 
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class SlotImpl implements Slot {
-    private final Map.Entry<Number, Number> coords;
-    private final ServiceInventory serviceInventory;
-    private Item item;
+    Coords coords;
+    @NonFinal InventoryLayer layer;
+    ServiceInventory inventory;
+    @NonFinal Item item;
+    @NonFinal Consumer<Click> clickConsumer;
+    @NonFinal boolean visible = true;
 
-    public SlotImpl(int x, int y, ServiceInventory serviceInventory) {
-        this.coords = new AbstractMap.SimpleEntry<>((Number) x, (Number) y);
-        this.serviceInventory = serviceInventory;
+    public SlotImpl(int x, int y, InventoryLayer layer, ServiceInventory inventory) {
+        this.coords = Coords.of(x, y);
+        this.layer = layer;
+        this.inventory = inventory;
     }
 
-    public SlotImpl(Map.Entry<Number, Number> coords, ServiceInventory serviceInventory, Item item) {
+    public SlotImpl(int x, int y, InventoryLayer layer, ServiceInventory inventory, Item item) {
+        this.coords = Coords.of(x, y);
+        this.layer = layer;
+        this.inventory = inventory;
+        this.item = item;
+    }
+
+    public SlotImpl(int x, int y, InventoryLayer layer, ServiceInventory inventory, Item item, Consumer<Click> clickConsumer) {
+        this.coords = Coords.of(x, y);
+        this.layer = layer;
+        this.inventory = inventory;
+        this.item = item;
+        this.clickConsumer = clickConsumer;
+    }
+
+    public SlotImpl(Coords coords, InventoryLayer layer, ServiceInventory inventory, Item item) {
         this.coords = coords;
-        this.serviceInventory = serviceInventory;
+        this.layer = layer;
+        this.inventory = inventory;;
         this.item = item;
     }
 
     @Override
-    public Map.Entry<Number, Number> getCoords() {
+    public Coords getCoords() {
         return coords;
     }
 
     @Override
-    public ServiceInventory getInventory() {
-        return serviceInventory;
+    public InventoryLayer getLayer() {
+        return layer;
     }
 
     @Override
@@ -47,24 +75,44 @@ public class SlotImpl implements Slot {
 
     @Override
     public void onClick(Click click) {
-        // Default implementation - can be overridden
+        clickConsumer.accept(click);
+    }
+
+    @Override
+    public void setClickConsumer(Consumer<Click> clickConsumer) {
+        this.clickConsumer = clickConsumer;
+    }
+
+    @Override
+    public void setLayer(InventoryLayer layer) {
+        this.layer = layer;
+    }
+
+    @Override
+    public boolean isVisible() {
+        return visible;
+    }
+
+    @Override
+    public void setVisible(boolean visible) {
+        this.visible = visible;
     }
 
     public JSONObject serialize() {
         JSONObject json = new JSONObject();
-        json.put("x", coords.getKey());
-        json.put("y", coords.getValue());
+        json.put("x", coords.getX());
+        json.put("y", coords.getY());
         if (item != null && item instanceof ItemImpl) {
             json.put("item", ((ItemImpl) item).serialize());
         }
         return json;
     }
 
-    public static SlotImpl deserialize(JSONObject json, ServiceInventory serviceInventory) {
+    public static SlotImpl deserialize(JSONObject json, InventoryLayer layer, ServiceInventory serviceInventory) {
         int x = json.getIntValue("x");
         int y = json.getIntValue("y");
 
-        SlotImpl slot = new SlotImpl(x, y, serviceInventory);
+        SlotImpl slot = new SlotImpl(x, y, layer, serviceInventory);
 
         if (json.containsKey("item") && json.getJSONObject("item") != null) {
             slot.setItem(ItemImpl.deserialize(json.getJSONObject("item")));

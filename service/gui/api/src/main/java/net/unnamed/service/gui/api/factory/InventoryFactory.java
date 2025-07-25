@@ -1,28 +1,30 @@
 package net.unnamed.service.gui.api.factory;
 
+import net.kyori.adventure.text.Component;
 import net.unnamed.service.gui.api.inventory.ChestServiceInventory;
 import net.unnamed.service.gui.api.inventory.ServiceInventory;
 import net.unnamed.service.gui.api.inventory.ServiceInventoryType;
 
-public abstract class InventoryFactory {
-    private static InventoryFactory instance;
+public abstract class InventoryFactory<T extends InventoryFactory<T>> {
+    private static InventoryFactory<?> instance;
 
     protected InventoryFactory() {}
 
-    public static void setInstance(InventoryFactory factory) {
-        if (InventoryFactory.instance != null) {
+    public static <T extends InventoryFactory<T>> void setInstance(T factory) {
+        if (instance != null) {
             throw new IllegalStateException("InventoryFactory instance already set");
         }
-        InventoryFactory.instance = factory;
+        instance = factory;
     }
 
-    public static InventoryFactory getInstance() {
+    @SuppressWarnings("unchecked")
+    public static <T extends InventoryFactory<T>> T getInstance() {
         if (instance == null) {
             throw new IllegalStateException("InventoryFactory instance not set");
         }
-        return instance;
+        return (T) instance;
     }
 
-    public abstract ServiceInventory createInventory(ServiceInventoryType type, String title, int rows, int columns);
-    public abstract ChestServiceInventory createChestInventory(String title, int rows, int columns);
+    public abstract ServiceInventory createInventory(ServiceInventoryType type, Component title, int rows, int columns);
+    public abstract ChestServiceInventory createChestInventory(Component title, int rows, int columns);
 }

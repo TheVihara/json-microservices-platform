@@ -1,6 +1,5 @@
 package net.unnamed.common.config;
 
-import com.google.auto.service.AutoService;
 import de.bsommerfeld.jshepherd.core.ConfigurablePojo;
 import de.bsommerfeld.jshepherd.core.PersistenceDelegate;
 import de.bsommerfeld.jshepherd.core.PersistenceDelegateFactory;

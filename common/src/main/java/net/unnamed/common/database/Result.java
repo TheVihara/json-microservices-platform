@@ -1,11 +1,35 @@
 package net.unnamed.common.database;
 
-public record Result<T>(boolean success, T data, String message) {
-    public static <T> Result<T> success(T data) {
-        return new Result<>(true, data, null);
+import java.util.Optional;
+
+public class Result<T> {
+    private final boolean success;
+    private final T value;
+    private final String error;
+
+    private Result(boolean success, T value, String error) {
+        this.success = success;
+        this.value = value;
+        this.error = error;
     }
 
-    public static <T> Result<T> failure(String message) {
-        return new Result<>(false, null, message);
+    public static <T> Result<T> success(T value) {
+        return new Result<>(true, value, null);
+    }
+
+    public static <T> Result<T> failure(String error) {
+        return new Result<>(false, null, error);
+    }
+
+    public boolean success() {
+        return success;
+    }
+
+    public T value() {
+        return value;
+    }
+
+    public Optional<String> error() {
+        return Optional.ofNullable(error);
     }
 }

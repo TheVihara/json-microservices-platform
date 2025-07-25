@@ -7,6 +7,6 @@ public interface DaoCrud<T, ID> {
     CompletableFuture<Boolean> init();
     CompletableFuture<T> getById(ID id);
     CompletableFuture<List<T>> getAll();
-    CompletableFuture<Boolean> save(T t);
+    CompletableFuture<T> save(T t);
     CompletableFuture<Boolean> deleteById(ID id);
 }

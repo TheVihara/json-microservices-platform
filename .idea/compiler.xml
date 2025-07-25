@@ -24,11 +24,16 @@
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.38/57f8f5e02e92a30fd21b80cbd426a4172b5f8e29/lombok-1.18.38.jar" />
         </processorPath>
+        <module name="unnamed-platform.minecraft.paper.knowledge-system.main" />
+        <module name="unnamed-platform.minecraft.paper.gui-system-module.main" />
+        <module name="unnamed-platform.service.gui.api.main" />
+        <module name="unnamed-platform.service.gui.main" />
+        <module name="unnamed-platform.minecraft.paper.essentials.main" />
+        <module name="unnamed-platform.minecraft.paper.main" />
         <module name="unnamed-platform.service.command.main" />
         <module name="unnamed-platform.minecraft.paper.container-module.main" />
         <module name="unnamed-platform.service.command.command-paper-module.main" />
         <module name="unnamed-platform.service.player.api.main" />
-        <module name="unnamed-platform.service.gui.api.main" />
         <module name="unnamed-platform.service.party.main" />
         <module name="unnamed-platform.service.pack.api.main" />
         <module name="unnamed-platform.service.auth.main" />
@@ -36,16 +41,17 @@
         <module name="unnamed-platform.service.punishment.main" />
         <module name="unnamed-platform.service.gui.gui-paper-module.main" />
         <module name="unnamed-platform.service.command.api.main" />
-        <module name="unnamed-platform.service.gui.main" />
         <module name="unnamed-platform.service.common.main" />
         <module name="unnamed-platform.service.permission.main" />
         <module name="unnamed-platform.service.friend.main" />
-        <module name="unnamed-platform.minecraft.paper.essentials.main" />
+        <module name="unnamed-platform.minecraft.paper.item-system.api.main" />
         <module name="unnamed-platform.minecraft.velocity-connector.main" />
         <module name="unnamed-platform.service.pack.main" />
         <module name="unnamed-platform.service.player.main" />
+        <module name="unnamed-platform.minecraft.paper.essentials.api.main" />
         <module name="unnamed-platform.minecraft.paper.paper-connector.main" />
-        <module name="unnamed-platform.minecraft.paper.main" />
+        <module name="unnamed-platform.minecraft.paper.attribute-system.main" />
+        <module name="unnamed-platform.minecraft.paper.item-system.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="23">

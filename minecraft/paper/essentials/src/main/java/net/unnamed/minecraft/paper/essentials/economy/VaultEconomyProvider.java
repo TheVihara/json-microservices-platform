@@ -1,22 +1,24 @@
 package net.unnamed.minecraft.paper.essentials.economy;
 
+import lombok.AccessLevel;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.economy.EconomyResponse;
 import net.unnamed.minecraft.paper.essentials.player.PlayerManager;
+import net.unnamed.minecraft.paper.essentials.api.player.EssentialsPlayer;
 import org.bukkit.OfflinePlayer;
 
 import java.util.List;
 
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+@RequiredArgsConstructor
 public class VaultEconomyProvider implements Economy {
-    private final PlayerManager playerManager;
-
-    public VaultEconomyProvider(final PlayerManager playerManager) {
-        this.playerManager = playerManager;
-    }
+    PlayerManager playerManager;
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 
     @Override
@@ -36,7 +38,7 @@ public class VaultEconomyProvider implements Economy {
 
     @Override
     public String format(double v) {
-        return String.valueOf(v);
+        return String.format("$%.2f", v);
     }
 
     @Override
@@ -49,183 +51,88 @@ public class VaultEconomyProvider implements Economy {
         return "$";
     }
 
-    @Override
-    public boolean hasAccount(String s) {
-        return false;
+    private EssentialsPlayer getPlayer(OfflinePlayer offlinePlayer) {
+        return playerManager.getCache().getByUUID(offlinePlayer.getUniqueId()).orElse(null);
     }
 
     @Override
-    public boolean hasAccount(OfflinePlayer offlinePlayer) {
-        return false;
+    public boolean hasAccount(OfflinePlayer player) {
+        return getPlayer(player) != null;
     }
 
     @Override
-    public boolean hasAccount(String s, String s1) {
-        return false;
+    public double getBalance(OfflinePlayer player) {
+        EssentialsPlayer p = getPlayer(player);
+        return p != null ? p.getBalance() : 0.0;
     }
 
     @Override
-    public boolean hasAccount(OfflinePlayer offlinePlayer, String s) {
-        return false;
+    public boolean has(OfflinePlayer player, double amount) {
+        EssentialsPlayer p = getPlayer(player);
+        return p != null && p.getBalance() >= amount;
     }
 
     @Override
-    public double getBalance(String s) {
-        return 0;
+    public EconomyResponse withdrawPlayer(OfflinePlayer player, double amount) {
+        EssentialsPlayer p = getPlayer(player);
+        if (p == null) {
+            return new EconomyResponse(0, 0, EconomyResponse.ResponseType.FAILURE, "Account not found");
+        }
+
+        if (p.getBalance() < amount) {
+            return new EconomyResponse(0, p.getBalance(), EconomyResponse.ResponseType.FAILURE, "Insufficient funds");
+        }
+
+        p.setBalance(p.getBalance() - amount);
+        return new EconomyResponse(amount, p.getBalance(), EconomyResponse.ResponseType.SUCCESS, null);
     }
 
     @Override
-    public double getBalance(OfflinePlayer offlinePlayer) {
-        return 0;
+    public EconomyResponse depositPlayer(OfflinePlayer player, double amount) {
+        EssentialsPlayer p = getPlayer(player);
+        if (p == null) {
+            return new EconomyResponse(0, 0, EconomyResponse.ResponseType.FAILURE, "Account not found");
+        }
+
+        p.setBalance(p.getBalance() + amount);
+        return new EconomyResponse(amount, p.getBalance(), EconomyResponse.ResponseType.SUCCESS, null);
     }
 
     @Override
-    public double getBalance(String s, String s1) {
-        return 0;
+    public boolean createPlayerAccount(OfflinePlayer player) {
+        return hasAccount(player); // Created on join
     }
 
-    @Override
-    public double getBalance(OfflinePlayer offlinePlayer, String s) {
-        return 0;
-    }
+    // Unsupported or unused methods
 
-    @Override
-    public boolean has(String s, double v) {
-        return false;
-    }
-
-    @Override
-    public boolean has(OfflinePlayer offlinePlayer, double v) {
-        return false;
-    }
-
-    @Override
-    public boolean has(String s, String s1, double v) {
-        return false;
-    }
-
-    @Override
-    public boolean has(OfflinePlayer offlinePlayer, String s, double v) {
-        return false;
-    }
-
-    @Override
-    public EconomyResponse withdrawPlayer(String s, double v) {
-        return null;
-    }
-
-    @Override
-    public EconomyResponse withdrawPlayer(OfflinePlayer offlinePlayer, double v) {
-        return null;
-    }
-
-    @Override
-    public EconomyResponse withdrawPlayer(String s, String s1, double v) {
-        return null;
-    }
-
-    @Override
-    public EconomyResponse withdrawPlayer(OfflinePlayer offlinePlayer, String s, double v) {
-        return null;
-    }
-
-    @Override
-    public EconomyResponse depositPlayer(String s, double v) {
-        return null;
-    }
-
-    @Override
-    public EconomyResponse depositPlayer(OfflinePlayer offlinePlayer, double v) {
-        return null;
-    }
-
-    @Override
-    public EconomyResponse depositPlayer(String s, String s1, double v) {
-        return null;
-    }
-
-    @Override
-    public EconomyResponse depositPlayer(OfflinePlayer offlinePlayer, String s, double v) {
-        return null;
-    }
-
-    @Override
-    public EconomyResponse createBank(String s, String s1) {
-        return null;
-    }
-
-    @Override
-    public EconomyResponse createBank(String s, OfflinePlayer offlinePlayer) {
-        return null;
-    }
-
-    @Override
-    public EconomyResponse deleteBank(String s) {
-        return null;
-    }
-
-    @Override
-    public EconomyResponse bankBalance(String s) {
-        return null;
-    }
-
-    @Override
-    public EconomyResponse bankHas(String s, double v) {
-        return null;
-    }
-
-    @Override
-    public EconomyResponse bankWithdraw(String s, double v) {
-        return null;
-    }
-
-    @Override
-    public EconomyResponse bankDeposit(String s, double v) {
-        return null;
-    }
-
-    @Override
-    public EconomyResponse isBankOwner(String s, String s1) {
-        return null;
-    }
-
-    @Override
-    public EconomyResponse isBankOwner(String s, OfflinePlayer offlinePlayer) {
-        return null;
-    }
-
-    @Override
-    public EconomyResponse isBankMember(String s, String s1) {
-        return null;
-    }
-
-    @Override
-    public EconomyResponse isBankMember(String s, OfflinePlayer offlinePlayer) {
-        return null;
-    }
-
-    @Override
-    public List<String> getBanks() {
-        return List.of();
-    }
-
-    @Override
-    public boolean createPlayerAccount(String s) {
-        return false;
-    }
-
-    @Override
-    public boolean createPlayerAccount(OfflinePlayer offlinePlayer) {
-        return false;
-    }
-
-    @Override
-    public boolean createPlayerAccount(String s, String s1) {
-        return false;
-    }
-
-    @Override
-    public boolean createPlayerAccount(OfflinePlayer offlinePlayer, String s) {
-        return false;
-    }
+    @Override public boolean hasAccount(String name) { return false; }
+    @Override public boolean hasAccount(String name, String worldName) { return false; }
+    @Override public boolean hasAccount(OfflinePlayer player, String worldName) { return false; }
+    @Override public double getBalance(String name) { return 0; }
+    @Override public double getBalance(String name, String worldName) { return 0; }
+    @Override public double getBalance(OfflinePlayer player, String worldName) { return 0; }
+    @Override public boolean has(String name, double amount) { return false; }
+    @Override public boolean has(String name, String worldName, double amount) { return false; }
+    @Override public boolean has(OfflinePlayer player, String worldName, double amount) { return false; }
+    @Override public EconomyResponse withdrawPlayer(String name, double amount) { return null; }
+    @Override public EconomyResponse withdrawPlayer(String name, String worldName, double amount) { return null; }
+    @Override public EconomyResponse withdrawPlayer(OfflinePlayer player, String worldName, double amount) { return null; }
+    @Override public EconomyResponse depositPlayer(String name, double amount) { return null; }
+    @Override public EconomyResponse depositPlayer(String name, String worldName, double amount) { return null; }
+    @Override public EconomyResponse depositPlayer(OfflinePlayer player, String worldName, double amount) { return null; }
+    @Override public EconomyResponse createBank(String name, String player) { return null; }
+    @Override public EconomyResponse createBank(String name, OfflinePlayer player) { return null; }
+    @Override public EconomyResponse deleteBank(String name) { return null; }
+    @Override public EconomyResponse bankBalance(String name) { return null; }
+    @Override public EconomyResponse bankHas(String name, double amount) { return null; }
+    @Override public EconomyResponse bankWithdraw(String name, double amount) { return null; }
+    @Override public EconomyResponse bankDeposit(String name, double amount) { return null; }
+    @Override public EconomyResponse isBankOwner(String name, String player) { return null; }
+    @Override public EconomyResponse isBankOwner(String name, OfflinePlayer player) { return null; }
+    @Override public EconomyResponse isBankMember(String name, String player) { return null; }
+    @Override public EconomyResponse isBankMember(String name, OfflinePlayer player) { return null; }
+    @Override public List<String> getBanks() { return List.of(); }
+    @Override public boolean createPlayerAccount(String playerName) { return false; }
+    @Override public boolean createPlayerAccount(String playerName, String worldName) { return false; }
+    @Override public boolean createPlayerAccount(OfflinePlayer player, String worldName) { return false; }
 }

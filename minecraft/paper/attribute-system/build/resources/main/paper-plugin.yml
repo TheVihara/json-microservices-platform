@@ -1,0 +1,16 @@
+name: AttributeSystem
+version: '1.0'
+main: net.unnamed.minecraft.paper.attribute.AttributeSystemPlugin
+description: Attributes
+api-version: '1.21.4'
+dependencies:
+  bootstrap:
+    EssentialsA:
+      load: BEFORE
+      required: true
+      join-classpath: true
+  server:
+    EssentialsA:
+      load: BEFORE
+      required: true
+      join-classpath: true

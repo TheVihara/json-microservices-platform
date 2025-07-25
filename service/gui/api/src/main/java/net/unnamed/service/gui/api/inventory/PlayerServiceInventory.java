@@ -2,7 +2,8 @@ package net.unnamed.service.gui.api.inventory;
 
 import net.unnamed.service.gui.api.handler.CommonSlotHandler;
 import net.unnamed.service.gui.api.handler.SlotHandler;
-import org.antlr.v4.runtime.misc.Pair;
+import net.unnamed.service.gui.api.layer.InventoryLayer;
+import org.apache.commons.lang3.tuple.Pair;
 
 public interface PlayerServiceInventory extends ServiceInventory {
     @Override
@@ -30,18 +31,18 @@ public interface PlayerServiceInventory extends ServiceInventory {
             super(openedInventory);
         }
 
-        @Override
+/*        @Override
         public Pair<Integer, ServiceInventory> findSlot(int x, int y) {
-            /*
+            *//*
              * Implement logic to convert (x, y) into slot index.
              * Example for player inventory (4 rows × 9 columns):
              * slotIndex = y * getColumns() + x;
-             */
+             *//*
             int columns = openedInventory.getColumns();
             int slotIndex = y * columns + x;
 
             // Validate the slotIndex if needed
-            return new Pair<>(slotIndex, openedInventory);
-        }
+            return Pair.of(slotIndex, openedInventory);
+        }*/
     }
 }

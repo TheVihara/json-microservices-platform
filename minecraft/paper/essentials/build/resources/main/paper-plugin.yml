@@ -10,11 +10,11 @@ dependencies:
       required: true
       join-classpath: true
   server:
-    PaperConnector:
+    PlaceholderAPI:
       load: BEFORE
       required: true
       join-classpath: true
-    PlaceholderAPI:
+    PaperConnector:
       load: BEFORE
       required: true
       join-classpath: true

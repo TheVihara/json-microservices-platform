@@ -1,12 +1,14 @@
 package net.unnamed.service.gui.api.inventory;
 
 import com.alibaba.fastjson2.JSONObject;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.serializer.json.JSONComponentSerializer;
 import net.unnamed.service.gui.api.Gui;
 import net.unnamed.service.gui.api.factory.InventoryFactory;
 import net.unnamed.service.gui.api.serializer.SerializerType;
 
 public interface ServiceInventory extends Gui {
-    String getTitle();
+    Component getTitle();
     ServiceInventoryType getType();
     int getRows();
     int getColumns();
@@ -19,7 +21,7 @@ public interface ServiceInventory extends Gui {
         @Override
         public JSONObject serialize(ServiceInventory gui) {
             JSONObject jsonObject = JSONObject.of();
-            jsonObject.put("title", gui.getTitle());
+            jsonObject.put("title", JSONComponentSerializer.json().serialize(gui.getTitle()));
             jsonObject.put("type", gui.getType().name());
             jsonObject.put("rows", gui.getRows());
             jsonObject.put("columns", gui.getColumns());
@@ -30,7 +32,7 @@ public interface ServiceInventory extends Gui {
         public ServiceInventory deserialize(JSONObject jsonObject) {
             return InventoryFactory.getInstance().createInventory(
                     ServiceInventoryType.valueOf(jsonObject.getString("type")),
-                    jsonObject.getString("title"),
+                    JSONComponentSerializer.json().deserialize(jsonObject.getString("title")),
                     jsonObject.getInteger("rows"),
                     jsonObject.getInteger("columns")
             );

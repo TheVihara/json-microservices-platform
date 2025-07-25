@@ -2,7 +2,8 @@ package net.unnamed.service.gui.api.inventory;
 
 import net.unnamed.service.gui.api.handler.CommonSlotHandler;
 import net.unnamed.service.gui.api.handler.SlotHandler;
-import org.antlr.v4.runtime.misc.Pair;
+import net.unnamed.service.gui.api.layer.InventoryLayer;
+import org.apache.commons.lang3.tuple.Pair;
 
 public interface ChestServiceInventory extends ServiceInventory {
 
@@ -38,12 +39,12 @@ public interface ChestServiceInventory extends ServiceInventory {
             super(openedInventory);
         }
 
-        @Override
+/*        @Override
         public Pair<Integer, ServiceInventory> findSlot(int x, int y) {
-            /*
+            *//*
              * Convert (x, y) into slot index:
              * slotIndex = y * columns + x
-             */
+             *//*
             int columns = openedInventory.getColumns();
             int slotIndex = y * columns + x;
 
@@ -52,7 +53,7 @@ public interface ChestServiceInventory extends ServiceInventory {
                 return null; // or throw exception
             }
 
-            return new Pair<>(slotIndex, openedInventory);
-        }
+            return Pair.of(slotIndex, openedInventory);
+        }*/
     }
 }

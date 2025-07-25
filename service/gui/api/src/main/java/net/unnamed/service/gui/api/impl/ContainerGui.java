@@ -1,10 +1,13 @@
 package net.unnamed.service.gui.api.impl;
 
+import net.unnamed.service.gui.api.Coords;
+import net.unnamed.service.gui.api.InventoryViewer;
 import net.unnamed.service.gui.api.handler.SlotHandler;
 import net.unnamed.service.gui.api.inventory.ServiceInventory;
 import net.unnamed.service.gui.api.inventory.PlayerServiceInventory;
+import net.unnamed.service.gui.api.layer.InventoryLayer;
 import net.unnamed.service.gui.api.slot.Slot;
-import org.antlr.v4.runtime.misc.Pair;
+import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,7 +47,7 @@ public abstract class ContainerGui extends CommonGui {
             this.bottomInventory = bottomInventory;
         }
 
-        @Override
+/*        @Override
         public List<Map.Entry<Integer, Integer>> getUpdatingSlots() {
             return updatingSlots;
         }
@@ -55,11 +58,56 @@ public abstract class ContainerGui extends CommonGui {
         }
 
         @Override
-        public void setSlot(Map.Entry<Integer, Integer> coords, Slot slot) {
-            slotCoords.put(coords, slot);
+        public void setSlot(Slot slot) {
+            slotCoords.put(slot.getCoords(), slot);
+        }*/
+
+        @Override
+        public Map<String, InventoryLayer> getLayers() {
+            return Map.of();
         }
 
         @Override
+        public InventoryLayer getLayer(String key) {
+            return null;
+        }
+
+        @Override
+        public Slot getSlot(int x, int y) {
+            return null;
+        }
+
+        @Override
+        public Slot getSlot(Coords coords) {
+            return null;
+        }
+
+/*        @Override
+        public Slot getSlot(Map.Entry<Integer, Integer> slotCoords) {
+            return null;
+        }*/
+
+        @Override
+        public Slot getSlot(int index) {
+            return null;
+        }
+
+        @Override
+        public void addLayer(String key, InventoryLayer layer) {
+
+        }
+
+        @Override
+        public void removeLayer(String key) {
+
+        }
+
+        @Override
+        public void draw(InventoryViewer inventoryViewer) {
+
+        }
+
+/*        @Override
         public Pair<Integer, ServiceInventory> findSlot(int x, int y) {
             int topRows = topServiceInventory.getRows();
             int bottomRows = bottomInventory.getRows();
@@ -67,18 +115,18 @@ public abstract class ContainerGui extends CommonGui {
             if (y < topRows) {
                 // In top inventory
                 int slotIndex = y * topServiceInventory.getColumns() + x;
-                return new Pair<>(slotIndex, topServiceInventory);
+                return Pair.of(slotIndex, topServiceInventory);
             } else {
                 // In player inventory below
                 int relativeY = y - topRows;
                 if (relativeY < bottomRows) {
                     int slotIndex = relativeY * bottomInventory.getColumns() + x;
-                    return new Pair<>(slotIndex, bottomInventory);
+                    return Pair.of(slotIndex, bottomInventory);
                 } else {
                     // Invalid coordinate
                     return null;
                 }
             }
-        }
+        }*/
     }
 }

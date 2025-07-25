@@ -1,6 +1,5 @@
 package net.unnamed.service.common;
 
-import net.unnamed.common.config.CustomYamlPersistenceDelegateFactory;
 import net.unnamed.common.logging.ConsoleLogger;
 import net.unnamed.common.logging.PlatformLogger;
 import net.unnamed.common.nats.NatsManager;

@@ -12,8 +12,14 @@
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/minecraft" />
             <option value="$PROJECT_DIR$/minecraft/paper" />
+            <option value="$PROJECT_DIR$/minecraft/paper/attribute-system" />
             <option value="$PROJECT_DIR$/minecraft/paper/container-module" />
             <option value="$PROJECT_DIR$/minecraft/paper/essentials" />
+            <option value="$PROJECT_DIR$/minecraft/paper/essentials/api" />
+            <option value="$PROJECT_DIR$/minecraft/paper/gui-system-module" />
+            <option value="$PROJECT_DIR$/minecraft/paper/item-system" />
+            <option value="$PROJECT_DIR$/minecraft/paper/item-system/api" />
+            <option value="$PROJECT_DIR$/minecraft/paper/knowledge-system" />
             <option value="$PROJECT_DIR$/minecraft/paper/paper-connector" />
             <option value="$PROJECT_DIR$/minecraft/velocity-connector" />
             <option value="$PROJECT_DIR$/service" />
