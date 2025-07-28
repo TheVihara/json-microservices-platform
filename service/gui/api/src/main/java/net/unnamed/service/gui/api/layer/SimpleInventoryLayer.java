@@ -93,14 +93,14 @@ public class SimpleInventoryLayer implements InventoryLayer {
     public void draw(InventoryViewer viewer, ServiceInventory inventory) {
         onDraw(viewer, inventory);
         SlotHandler slotHandler = inventory.getSlotHandler();
-        System.out.println("Drawing layer " + weight + " with " + slots.size() + " slots");
+        //System.out.println("Drawing layer " + weight + " with " + slots.size() + " slots");
         for (Slot slot : slots.values()) {
             Coords coords = slot.getCoords();
             int x = coords.getX();
             int y = coords.getY();
             Slot currentSlot = slotHandler.getSlot(x, y);
 
-            System.out.println("Drawing slot " + x + " " + y + " slot " + slot.getItem().getMaterial());
+            //System.out.println("Drawing slot " + x + " " + y + " slot " + slot.getItem().getMaterial());
             if (currentSlot == null) {
                 inventory.draw(slot); // TODO: probably going to be an issue
                 continue;

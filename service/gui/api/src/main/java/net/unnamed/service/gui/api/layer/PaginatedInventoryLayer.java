@@ -78,7 +78,7 @@ public class PaginatedInventoryLayer<T extends Item> extends SimpleInventoryLaye
                 Coords coords = new Coords(x, y);
                 T item = items.get(index++);
 
-                System.out.println("Setting slot " + coords.getX() + " " + coords.getY() + "  with item " + item);
+                //System.out.println("Setting slot " + coords.getX() + " " + coords.getY() + "  with item " + item);
 
                 setSlot(coords, Slot.of(coords, this, inventory, item, onClick));
             }

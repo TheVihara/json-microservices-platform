@@ -1,11 +1,14 @@
 package net.unnamed.service.pack.font;
 
+import com.zaxxer.hikari.HikariDataSource;
 import de.bsommerfeld.jshepherd.core.ConfigurationLoader;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
+import net.unnamed.service.pack.api.BitMapFont;
 import net.unnamed.service.pack.api.NegativeFontRegistry;
+import net.unnamed.service.pack.api.dao.BitMapFontDao;
 import net.unnamed.service.pack.font.config.FontConfig;
 import net.unnamed.service.pack.font.factory.FontFactory;
 import team.unnamed.creative.ResourcePack;
@@ -29,8 +32,17 @@ import java.util.logging.Logger;
 @RequiredArgsConstructor
 public class FontManager {
     static Logger logger = Logger.getLogger("FontManager");
-    FontFactory fontFactory = new FontFactory();
     static NegativeFontRegistry negativeFontRegistry = new NegativeFontRegistry();
+
+    BitMapFontDao bitMapFontDao;
+    FontFactory fontFactory;
+
+    public FontManager(HikariDataSource dataSource) {
+        this.bitMapFontDao = new BitMapFontDao(dataSource);
+        this.fontFactory = new FontFactory(bitMapFontDao);
+
+        this.bitMapFontDao.init().join();
+    }
 
     public void scan(ResourcePack resourcePack, Path dataFolder) {
         generateNegativeFonts(resourcePack);

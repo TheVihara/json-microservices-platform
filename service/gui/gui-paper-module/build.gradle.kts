@@ -15,6 +15,7 @@ repositories {
 dependencies {
     implementation(project(":service:gui:api"))
     compileOnly(project(":minecraft:paper:paper-connector"))
+    implementation(project(":service:pack:api"))
 }
 
 tasks.withType<ShadowJar> {

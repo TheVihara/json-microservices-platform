@@ -11,6 +11,11 @@ public class PaperChestInventory extends CustomInventory implements ChestService
         super(ServiceInventoryType.CHEST, title, rows, columns);
     }
 
+    public PaperChestInventory(String emoji, String header, String body, String footer, Component title, int rows, int columns) {
+        super(ServiceInventoryType.CHEST, emoji, header, body, footer, title, rows, columns);
+    }
+
+
     @Override
     public int getSize() {
         return rows * columns;

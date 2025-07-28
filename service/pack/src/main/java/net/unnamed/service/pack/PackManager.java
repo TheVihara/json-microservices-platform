@@ -1,8 +1,11 @@
 package net.unnamed.service.pack;
 
+import com.zaxxer.hikari.HikariDataSource;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import net.kyori.adventure.key.Key;
+import net.unnamed.common.database.MySqlConfig;
+import net.unnamed.common.database.mysql.MySqlDatabase;
 import net.unnamed.service.pack.factory.PackFactory;
 import net.unnamed.service.pack.font.FontManager;
 import net.unnamed.service.pack.model.ModelManager;
@@ -22,7 +25,7 @@ public class PackManager {
     ModelManager modelManager;
     Path dataFolder;
 
-    public PackManager(Path dataFolder) {
+    public PackManager(Path dataFolder, HikariDataSource dataSource) {
         this.dataFolder = dataFolder;
 
         if (!dataFolder.toFile().exists()) {
@@ -30,7 +33,7 @@ public class PackManager {
         }
 
         this.textureManager = new TextureManager();
-        this.fontManager = new FontManager();
+        this.fontManager = new FontManager(dataSource);
         this.modelManager = new ModelManager(dataFolder);
     }
 

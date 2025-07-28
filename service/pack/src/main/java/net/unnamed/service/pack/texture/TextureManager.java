@@ -36,7 +36,7 @@ public class TextureManager {
                     continue;
                 }
                 scan(resourcePack, namespace, textureFolder, subFiles);
-            } else {
+            } else if (file.getName().endsWith(".png")) {
                 Path filePath = file.toPath();
                 Path relativePath = textureFolder.relativize(filePath);
                 String texturePath = relativePath.toString().replace(File.separatorChar, '/');

@@ -13,6 +13,9 @@ import java.util.List;
 @Getter
 @Setter
 public class BitmapProviderConfig extends ConfigurablePojo<BitmapProviderConfig> {
+    @Key("key")
+    String key;
+
     @Key("namespace")
     String namespace;
 
@@ -21,6 +24,9 @@ public class BitmapProviderConfig extends ConfigurablePojo<BitmapProviderConfig>
 
     @Key("height")
     int height;
+
+    @Key("width")
+    int width;
 
     @Key("ascent")
     int ascent;

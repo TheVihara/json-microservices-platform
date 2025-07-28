@@ -1,8 +1,13 @@
 package net.unnamed.minecraft.paper.connector;
 
 import de.bsommerfeld.jshepherd.core.ConfigurationLoader;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import net.unnamed.common.ClassInstance;
 import net.unnamed.common.config.CustomYamlPersistenceDelegateFactory;
+import net.unnamed.common.database.mysql.MySqlDatabase;
 import net.unnamed.common.logging.PlatformLogger;
 import net.unnamed.common.nats.NatsManager;
 import net.unnamed.common.packet.PacketRegistry;
@@ -11,13 +16,17 @@ import net.unnamed.minecraft.paper.connector.module.ModuleManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+@RequiredArgsConstructor
+@Getter
 public class PaperConnectorPlugin extends JavaPlugin implements ClassInstance {
-    private final CustomYamlPersistenceDelegateFactory persistenceDelegateFactory = new CustomYamlPersistenceDelegateFactory();
-    private final PlatformLogger logger = new PlatformLogger("PaperConnector");
-    private final ModuleManager moduleManager = new ModuleManager(this);
-    private final PacketRegistry packetRegistry = new PacketRegistry();
-    private final ConnectorConfig connectorConfig = ConfigurationLoader.load(getDataFolder().toPath().resolve("config.yml"), ConnectorConfig::new);
-    private final NatsManager natsManager = NatsManager.INSTANCE;
+    CustomYamlPersistenceDelegateFactory persistenceDelegateFactory = new CustomYamlPersistenceDelegateFactory();
+    PlatformLogger logger = new PlatformLogger("PaperConnector");
+    PacketRegistry packetRegistry = new PacketRegistry();
+    ConnectorConfig connectorConfig = ConfigurationLoader.load(getDataFolder().toPath().resolve("config.yml"), ConnectorConfig::new);
+    MySqlDatabase mySqlDatabase = new MySqlDatabase(connectorConfig.getMySqlConfig());
+    ModuleManager moduleManager = new ModuleManager(this);
+    NatsManager natsManager = NatsManager.INSTANCE;
 
     @Override
     public void onLoad() {

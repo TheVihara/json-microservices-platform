@@ -9,6 +9,7 @@ public class MySqlDatabase {
 
     public MySqlDatabase(MySqlConfig mySqlConfig) {
         HikariConfig config = new HikariConfig();
+
         config.setDriverClassName(mySqlConfig.getDriver());
         config.setJdbcUrl(mySqlConfig.getUrl());
         config.setUsername(mySqlConfig.getUsername());

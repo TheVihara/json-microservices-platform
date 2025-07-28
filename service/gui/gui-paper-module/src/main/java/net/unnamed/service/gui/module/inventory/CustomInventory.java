@@ -23,12 +23,33 @@ public abstract class CustomInventory extends CommonGui implements ServiceInvent
     Inventory bukkitInventory;
     ServiceInventoryType type;
     SlotHandler slotHandler;
+    String emoji;
+    String header;
+    String body;
+    String footer;
     Component title;
     int rows;
     int columns;
 
+    public CustomInventory(ServiceInventoryType type, String emoji, String header, String body, String footer, Component title, int rows, int columns) {
+        this.bukkitInventory = Bukkit.createInventory(new CustomInventoryHolder(this), rows * columns);
+        this.emoji = emoji;
+        this.header = header;
+        this.body = body;
+        this.footer = footer;
+        this.type = type;
+        this.slotHandler = SlotHandler.of(this);
+        this.title = title;
+        this.rows = rows;
+        this.columns = columns;
+    }
+
     public CustomInventory(ServiceInventoryType type, Component title, int rows, int columns) {
         this.bukkitInventory = Bukkit.createInventory(new CustomInventoryHolder(this), rows * columns);
+        this.emoji = null;
+        this.header = null;
+        this.body = null;
+        this.footer = null;
         this.type = type;
         this.slotHandler = SlotHandler.of(this);
         this.title = title;

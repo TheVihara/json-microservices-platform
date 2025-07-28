@@ -1,6 +1,11 @@
 package net.unnamed.service.pack.font.factory;
 
+import lombok.AccessLevel;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import net.kyori.adventure.key.Key;
+import net.unnamed.service.pack.api.BitMapFont;
+import net.unnamed.service.pack.api.dao.BitMapFontDao;
 import net.unnamed.service.pack.font.config.FontConfig;
 import net.unnamed.service.pack.font.config.provider.*;
 import team.unnamed.creative.ResourcePack;
@@ -14,7 +19,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+@RequiredArgsConstructor
 public class FontFactory {
+    BitMapFontDao bitMapFontDao;
+
     public Font createFont(String namespace, String value, List<FontProvider> providers) {
         return createFont(Key.key(namespace, value), providers);
     }
@@ -103,6 +112,13 @@ public class FontFactory {
 
         if (fontConfig.getBitmapFontProviders() != null) {
             for (BitmapProviderConfig providerConfig : fontConfig.getBitmapFontProviders()) {
+                if (providerConfig.getKey() != null) {
+                    bitMapFontDao.save(new BitMapFont(
+                            providerConfig.getKey(),
+                            providerConfig.getCharacters().get(0),
+                            providerConfig.getWidth()
+                    ));
+                }
                 providers.add(this.createBitMapFontProvider(
                         providerConfig.getNamespace(),
                         providerConfig.getValue(),

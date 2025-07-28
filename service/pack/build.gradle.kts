@@ -15,6 +15,7 @@ dependencies {
     implementation("team.unnamed:creative-serializer-minecraft:1.7.3")
     implementation("team.unnamed:creative-server:1.7.3")
     implementation("com.github.bsommerfeld.jshepherd:core:3.3.1")
+    implementation("org.mariadb.jdbc:mariadb-java-client:3.5.4")
 }
 
 tasks.withType<ShadowJar> {

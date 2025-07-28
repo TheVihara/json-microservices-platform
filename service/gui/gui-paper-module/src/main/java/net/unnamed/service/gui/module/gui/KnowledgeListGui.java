@@ -1,6 +1,9 @@
 package net.unnamed.service.gui.module.gui;
 
+import net.kyori.adventure.key.Key;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.format.Style;
 import net.unnamed.service.gui.api.Coords;
 import net.unnamed.service.gui.api.InventoryViewer;
 import net.unnamed.service.gui.api.layer.PaginatedInventoryLayer;
@@ -11,6 +14,7 @@ import net.unnamed.service.gui.module.gui.item.KnowledgeItem;
 import net.unnamed.service.gui.module.inventory.PaperChestInventory;
 import net.unnamed.service.gui.module.item.PaperItem;
 import net.unnamed.service.gui.module.manager.KnowledgeManager;
+import net.unnamed.service.pack.api.NegativeFontRegistry;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -29,43 +33,43 @@ public class KnowledgeListGui extends PaperChestInventory {
             Material.BOOK, Material.PAPER, Material.MAP, Material.WRITABLE_BOOK, Material.KNOWLEDGE_BOOK
     );
 
+    private static final NegativeFontRegistry fontRegistry = new NegativeFontRegistry();
     private static final Random RANDOM = new Random();
 
     public KnowledgeListGui(KnowledgeManager knowledgeManager) {
-        super(Component.text("Test"), 6, 9);
+        super("\uE002", "header", "knowledge_body", "footer", Component.text("Knowledge Book"), 6, 9);
         this.knowledgeManager = knowledgeManager;
 
         List<KnowledgeConfig> knowledgeEntries = knowledgeManager.getKnowledgeEntries();
-
         Bukkit.getLogger().info("Loaded " + knowledgeEntries.size() + " knowledge entries");
 
-        Coords first = Coords.of(0, 1);
-        Coords second = Coords.of(5, 4);
+        Coords first = Coords.of(2, 1);
+        Coords second = Coords.of(6, 3);
 
         int itemsPerPage = (Math.abs(second.getX() - first.getX()) + 1) * (Math.abs(second.getY() - first.getY()) + 1);
+
         navigationLayer = SimpleInventoryLayer.builder()
                 .weight(20)
-                .firstCoords(Coords.of(0, 5))
+                .firstCoords(Coords.of(0, 4))
                 .secondCoords(Coords.of(8, 5))
                 .build();
 
         Slot nextPageSlot = Slot.of(
-                Coords.of(3, 5),
+                Coords.of(6, 4),
                 navigationLayer,
                 this,
-                new PaperItem(new ItemStack(Material.ARROW))
+                new PaperItem(new ItemStack(Material.AIR))
         );
 
         Slot previousPageSlot = Slot.of(
-                Coords.of(2, 5),
+                Coords.of(2, 4),
                 navigationLayer,
                 this,
-                new PaperItem(new ItemStack(Material.ARROW))
+                new PaperItem(new ItemStack(Material.AIR))
         );
 
         navigationLayer.setSlot(nextPageSlot.getCoords(), nextPageSlot);
         navigationLayer.setSlot(previousPageSlot.getCoords(), previousPageSlot);
-
         navigationLayer.setVisible(true);
 
         knowledgeListLayer = PaginatedInventoryLayer.<KnowledgeItem>paginatedBuilder()

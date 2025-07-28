@@ -1,5 +1,6 @@
 package net.unnamed.minecraft.paper.connector.module;
 
+import net.unnamed.common.database.mysql.MySqlDatabase;
 import net.unnamed.minecraft.paper.connector.PaperConnectorPlugin;
 
 import java.nio.file.Path;
@@ -8,6 +9,7 @@ public abstract class ConnectorModule implements Module {
     protected PaperConnectorPlugin plugin;
     protected Path dataFolder;
     protected ModuleConfig config;
+    protected MySqlDatabase mySqlDatabase;
 
     @Override
     public ModuleConfig getConfig() {
@@ -27,5 +29,6 @@ public abstract class ConnectorModule implements Module {
         this.plugin = plugin;
         dataFolder = plugin.getDataFolder().toPath().resolve("modules").resolve(config.getId().toLowerCase());
         dataFolder.toFile().mkdirs();
+        mySqlDatabase = plugin.getMySqlDatabase();
     }
 }

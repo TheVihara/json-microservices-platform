@@ -8,6 +8,10 @@ import net.unnamed.service.gui.api.factory.InventoryFactory;
 import net.unnamed.service.gui.api.serializer.SerializerType;
 
 public interface ServiceInventory extends Gui {
+    String getEmoji();
+    String getHeader();
+    String getBody();
+    String getFooter();
     Component getTitle();
     ServiceInventoryType getType();
     int getRows();

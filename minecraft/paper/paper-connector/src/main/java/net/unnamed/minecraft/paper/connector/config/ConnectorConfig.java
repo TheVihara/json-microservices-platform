@@ -2,16 +2,19 @@ package net.unnamed.minecraft.paper.connector.config;
 
 import de.bsommerfeld.jshepherd.annotation.Key;
 import de.bsommerfeld.jshepherd.core.ConfigurablePojo;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.experimental.FieldDefaults;
+import net.unnamed.common.database.MySqlConfig;
 
+@FieldDefaults(level = AccessLevel.PRIVATE)
+@Getter
+@Setter
 public class ConnectorConfig extends ConfigurablePojo<ConnectorConfig> {
     @Key("server-name")
-    private String serverName = "default";
+    String serverName = "default";
 
-    public void setServerName(String serverName) {
-        this.serverName = serverName;
-    }
-
-    public String getServerName() {
-        return serverName;
-    }
+    @Key("mysql")
+    MySqlConfig mySqlConfig = new MySqlConfig();
 }

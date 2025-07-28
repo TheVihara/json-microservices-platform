@@ -38,7 +38,7 @@ public class PaperGuiListener implements Listener {
             return;
         }
 
-        event.titleOverride(customInventory.getTitle());
+        paperGuiManager.setTitle(event, customInventory);
         customInventory.open(PlayerInventoryViewer.of((Player) event.getPlayer()));
     }
 
