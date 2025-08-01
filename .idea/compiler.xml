@@ -17,49 +17,280 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.18.0/89b684257096f548fa39a7df9fdaa409d4d4df91/error_prone_annotations-2.18.0.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/2.8/c85270e307e7b822f1086b93689124b89768e273/j2objc-annotations-2.8.jar" />
         </processorPath>
-        <module name="unnamed-platform.common.main" />
+        <module name="astopia-platform.common.main" />
       </profile>
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.38/57f8f5e02e92a30fd21b80cbd426a4172b5f8e29/lombok-1.18.38.jar" />
         </processorPath>
-        <module name="unnamed-platform.minecraft.paper.knowledge-system.main" />
-        <module name="unnamed-platform.minecraft.paper.gui-system-module.main" />
-        <module name="unnamed-platform.service.gui.api.main" />
-        <module name="unnamed-platform.service.gui.main" />
-        <module name="unnamed-platform.minecraft.paper.essentials.main" />
-        <module name="unnamed-platform.minecraft.paper.main" />
-        <module name="unnamed-platform.service.command.main" />
-        <module name="unnamed-platform.minecraft.paper.container-module.main" />
-        <module name="unnamed-platform.service.command.command-paper-module.main" />
-        <module name="unnamed-platform.service.player.api.main" />
-        <module name="unnamed-platform.service.party.main" />
-        <module name="unnamed-platform.service.pack.api.main" />
-        <module name="unnamed-platform.service.auth.main" />
-        <module name="unnamed-platform.service.deploy.main" />
-        <module name="unnamed-platform.service.punishment.main" />
-        <module name="unnamed-platform.service.gui.gui-paper-module.main" />
-        <module name="unnamed-platform.service.command.api.main" />
-        <module name="unnamed-platform.service.common.main" />
-        <module name="unnamed-platform.service.permission.main" />
-        <module name="unnamed-platform.service.friend.main" />
-        <module name="unnamed-platform.minecraft.paper.item-system.api.main" />
-        <module name="unnamed-platform.minecraft.velocity-connector.main" />
-        <module name="unnamed-platform.service.pack.main" />
-        <module name="unnamed-platform.service.player.main" />
-        <module name="unnamed-platform.minecraft.paper.essentials.api.main" />
-        <module name="unnamed-platform.minecraft.paper.paper-connector.main" />
-        <module name="unnamed-platform.minecraft.paper.attribute-system.main" />
-        <module name="unnamed-platform.minecraft.paper.item-system.main" />
+        <module name="astopia-platform.service.gui-service.gui-service-api.main" />
+        <module name="astopia-platform.minecraft.paper-plugin.command-system-plugin.command-system-plugin-api.main" />
+        <module name="astopia-platform.minecraft.paper-plugin.item-system-plugin.item-system-plugin-api.main" />
+        <module name="astopia-platform.service.gui-service.main" />
+        <module name="astopia-platform.minecraft.paper-connector.paper-connector-api.main" />
+        <module name="astopia-platform.minecraft.paper-plugin.main" />
+        <module name="astopia-platform.service.service-common.main" />
+        <module name="astopia-platform.service.permission-service.main" />
+        <module name="astopia-platform.minecraft.paper-connector.main" />
+        <module name="astopia-platform.minecraft.paper-plugin.command-system-plugin.main" />
+        <module name="astopia-platform.minecraft.paper-plugin.gui-system-plugin.main" />
+        <module name="astopia-platform.service.pack-service.pack-service-api.main" />
+        <module name="astopia-platform.minecraft.paper-connector.paper-connector-module.container-paper-connector-module.main" />
+        <module name="astopia-platform.minecraft.paper-plugin.knowledge-system-plugin.main" />
+        <module name="astopia-platform.service.player-service.main" />
+        <module name="astopia-platform.service.command-service.command-service-api.main" />
+        <module name="astopia-platform.service.pack-service.main" />
+        <module name="astopia-platform.minecraft.paper-plugin.attribute-system-plugin.main" />
+        <module name="astopia-platform.minecraft.paper-plugin.essentials-plugin.main" />
+        <module name="astopia-platform.minecraft.paper-plugin.gui-system-plugin.gui-system-plugin-api.main" />
+        <module name="astopia-platform.minecraft.paper-plugin.item-system-plugin.main" />
+        <module name="astopia-platform.service.command-service.main" />
+        <module name="astopia-platform.minecraft.velocity-connector.velocity-connector-api.main" />
+        <module name="astopia-platform.service.player-service.player-service-api.main" />
+        <module name="astopia-platform.minecraft.paper-plugin.essentials-plugin.essentials-plugin-api.main" />
+        <module name="astopia-platform.minecraft.paper-connector.paper-connector-module.main" />
+        <module name="astopia-platform.minecraft.velocity-plugin.main" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.38/57f8f5e02e92a30fd21b80cbd426a4172b5f8e29/lombok-1.18.38.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.velocitypowered/velocity-api/3.4.0-SNAPSHOT/8759dee73026653b8c35341369c0535a0713edf4/velocity-api-3.4.0-SNAPSHOT.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.moandjiezana.toml/toml4j/0.7.2/a03337911d0bd2c40932aca3946edb30d0e7d0c/toml4j-0.7.2.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.spongepowered/configurate-gson/4.1.2/3e5c7a0ea73e95ce6139fa72f1b6d36eb531ab81/configurate-gson-4.1.2.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-logger-slf4j/4.23.0/731e2f2532a8b17e00935bed0ebed27a588df264/adventure-text-logger-slf4j-4.23.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-minimessage/4.23.0/3230c09453a50090ae354bfc0d8dd6b72026d88/adventure-text-minimessage-4.23.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-serializer-ansi/4.23.0/6d7d4d625d6597e82c6221c90c944788382fc206/adventure-text-serializer-ansi-4.23.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-serializer-legacy/4.23.0/e9cacd4d98c1ecab249805e8058cf2eece047d5b/adventure-text-serializer-legacy-4.23.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-serializer-plain/4.23.0/2331599c8e892fe3996b6a25f85477152a1b2b3d/adventure-text-serializer-plain-4.23.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-serializer-json/4.23.0/955b9e7560304cc32ac489832fe3db9931f20b1/adventure-text-serializer-json-4.23.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-api/4.23.0/f6b5b75465f7112dbaf38dd8cfdc5f6b906c53a0/adventure-api-4.23.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-key/4.23.0/be07b3e282f9dbc1c0b24a65f0d442ebc504d4d/adventure-key-4.23.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-serializer-commons/4.23.0/e3658b807ae4e67cbbf4a874e3ba8acdd54da6f4/adventure-text-serializer-commons-4.23.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-serializer-gson/4.23.0/bf81a8f6f9509e2c826fac29a0e580e8c377ba37/adventure-text-serializer-gson-4.23.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.10.1/b3add478d4382b78ea20b1671390a858002feb6c/gson-2.10.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.inject/guice/6.0.0/9b422c69c4fa1ea95b2615444a94fede9b02fc40/guice-6.0.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/31.0.1-jre/119ea2b2bc205b138974d351777b20f02b92704b/guava-31.0.1-jre.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.spongepowered/configurate-yaml/4.1.2/f726180c21ec387be5b8a2e04d916443c4046207/configurate-yaml-4.1.2.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.yaml/snakeyaml/1.33/2cd0a87ff7df953f810c344bdf2fe3340b954c69/snakeyaml-1.33.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/2.0.17/d9e58ac9c7779ba3bf8142aff6c830617a7fe60f/slf4j-api-2.0.17.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.ben-manes.caffeine/caffeine/3.1.8/24795585df8afaf70a2cd534786904ea5889c047/caffeine-3.1.8.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.42.0/638ec33f363a94d41a4f03c3e7d3dcfba64e402d/checker-qual-3.42.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.velocitypowered/velocity-brigadier/1.0.0-SNAPSHOT/719dd1bda540a9be7f70f23c68fbe1a0e2fc69ca/velocity-brigadier-1.0.0-SNAPSHOT.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.spongepowered/configurate-hocon/4.1.2/3953a4aef8ff62c72d34e405d6df333f3876592a/configurate-hocon-4.1.2.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.21.1/6d9b10773b5237df178a7b3c1b4208df7d0e7f94/error_prone_annotations-2.21.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.3/ba035118bc8bac37d7eff77700720999acd9986d/j2objc-annotations-1.3.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.inject/jakarta.inject-api/2.0.1/4c28afe1991a941d7702fe1362c365f0a8641d1e/jakarta.inject-api-2.0.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/235ba8b489512805ac13a8f9ea77a1ca5ebe3e8/aopalliance-1.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.typesafe/config/1.4.1/19058a07624a87f90d129af7cd9c68bee94535a9/config-1.4.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.spongepowered/configurate-core/4.1.2/d6728b04738e73847f6a26349cf4368362feab97/configurate-core-4.1.2.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/examination-string/1.3.0/6f34afef5c54ccce4996bc321abf77518b55b4bd/examination-string-1.3.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/examination-api/1.3.0/8a2d185275307f1e2ef2adf7152b9a0d1d44c30b/examination-api-1.3.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/ansi/1.1.1/beeb71e49b25cac87c22975014e74c7b5940d1b7/ansi-1.1.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.1/1dcf1de382a0bf95a3d8b0849546c88bac1292c9/failureaccess-1.0.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/b421526c5f297295adef1c886e5246c39d4ac629/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.leangen.geantyref/geantyref/1.3.11/bc9c03b53917314d21fe6276aceb08aa84bf80dd/geantyref-1.3.11.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/option/1.1.0/593fecb9c42688eebc7d8da5d6ea127f4d4c92a2/option-1.1.0.jar" />
+        </processorPath>
+        <module name="astopia-platform.minecraft.velocity-plugin.velocity-command-system-plugin.main" />
+        <module name="astopia-platform.minecraft.velocity-connector.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="23">
+      <module name="astopia-platform.minecraft.paper-plugin-essentials-plugin" target="21" />
+      <module name="astopia-platform.minecraft.paper-plugin-essentials-plugin.main" target="21" />
+      <module name="astopia-platform.minecraft.paper-plugin-essentials-plugin.test" target="21" />
+      <module name="astopia-platform.service.command" target="21" />
+      <module name="astopia-platform.service.command.command-paper-module" target="21" />
+      <module name="astopia-platform.service.command.command-paper-module.main" target="21" />
+      <module name="astopia-platform.service.command.command-paper-module.test" target="21" />
+      <module name="astopia-platform.service.command.main" target="21" />
+      <module name="astopia-platform.service.command.test" target="21" />
+      <module name="net.astopia.unnamed-platform.minecraft.paper-connector" target="21" />
+      <module name="net.astopia.unnamed-platform.minecraft.paper-connector.main" target="21" />
+      <module name="net.astopia.unnamed-platform.minecraft.paper-connector.test" target="21" />
+      <module name="unnamed-platform.common" target="21" />
+      <module name="unnamed-platform.common.main" target="21" />
+      <module name="unnamed-platform.common.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper" target="21" />
+      <module name="unnamed-platform.minecraft.paper-connector.paper-connector-api" target="21" />
+      <module name="unnamed-platform.minecraft.paper-connector.paper-connector-api.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper-connector.paper-connector-api.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper-connector.paper-connector-module" target="21" />
+      <module name="unnamed-platform.minecraft.paper-connector.paper-connector-module.container-paper-connector-module" target="21" />
+      <module name="unnamed-platform.minecraft.paper-connector.paper-connector-module.container-paper-connector-module.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper-connector.paper-connector-module.container-paper-connector-module.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper-connector.paper-connector-module.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper-connector.paper-connector-module.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin-essentials-plugin" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin-essentials-plugin.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin-essentials-plugin.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.attribute-system" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.attribute-system-plugin" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.attribute-system-plugin.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.attribute-system-plugin.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.attribute-system.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.attribute-system.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.essentials-plugin" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.essentials-plugin.essentials-plugin-api" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.essentials-plugin.essentials-plugin-api.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.essentials-plugin.essentials-plugin-api.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.essentials-plugin.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.essentials-plugin.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.gui-system-plugin" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.gui-system-plugin.gui-system-plugin-api" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.gui-system-plugin.gui-system-plugin-api.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.gui-system-plugin.gui-system-plugin-api.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.gui-system-plugin.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.gui-system-plugin.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.item-system-plugin" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.item-system-plugin.item-system-plugin-api" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.item-system-plugin.item-system-plugin-api.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.item-system-plugin.item-system-plugin-api.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.item-system-plugin.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.item-system-plugin.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.knowledge-system-plugin" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.knowledge-system-plugin.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.knowledge-system-plugin.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper-plugin.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper.attribute-system" target="21" />
+      <module name="unnamed-platform.minecraft.paper.attribute-system.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper.attribute-system.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper.container-module" target="21" />
+      <module name="unnamed-platform.minecraft.paper.container-module.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper.container-module.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper.essentials" target="21" />
+      <module name="unnamed-platform.minecraft.paper.essentials.api" target="21" />
+      <module name="unnamed-platform.minecraft.paper.essentials.api.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper.essentials.api.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper.essentials.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper.essentials.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper.gui-paper-plugin" target="21" />
+      <module name="unnamed-platform.minecraft.paper.gui-paper-plugin.api" target="21" />
+      <module name="unnamed-platform.minecraft.paper.gui-paper-plugin.api.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper.gui-paper-plugin.api.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper.gui-paper-plugin.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper.gui-paper-plugin.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper.gui-system-module" target="21" />
+      <module name="unnamed-platform.minecraft.paper.gui-system-module.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper.gui-system-module.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper.item-system" target="21" />
+      <module name="unnamed-platform.minecraft.paper.item-system.api" target="21" />
+      <module name="unnamed-platform.minecraft.paper.item-system.api.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper.item-system.api.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper.item-system.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper.item-system.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper.knowledge-system" target="21" />
+      <module name="unnamed-platform.minecraft.paper.knowledge-system.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper.knowledge-system.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper.main" target="21" />
       <module name="unnamed-platform.minecraft.paper.mc-container-module.main" target="21" />
       <module name="unnamed-platform.minecraft.paper.mc-container-module.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper.paper-connector" target="21" />
+      <module name="unnamed-platform.minecraft.paper.paper-connector.api" target="21" />
+      <module name="unnamed-platform.minecraft.paper.paper-connector.api.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper.paper-connector.api.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper.paper-connector.main" target="21" />
+      <module name="unnamed-platform.minecraft.paper.paper-connector.test" target="21" />
+      <module name="unnamed-platform.minecraft.paper.test" target="21" />
+      <module name="unnamed-platform.minecraft.velocity-connector" target="21" />
+      <module name="unnamed-platform.minecraft.velocity-connector.main" target="21" />
+      <module name="unnamed-platform.minecraft.velocity-connector.test" target="21" />
+      <module name="unnamed-platform.service.auth" target="21" />
+      <module name="unnamed-platform.service.auth.main" target="21" />
+      <module name="unnamed-platform.service.auth.test" target="21" />
+      <module name="unnamed-platform.service.command" target="21" />
+      <module name="unnamed-platform.service.command-service" target="21" />
+      <module name="unnamed-platform.service.command-service.command-service-api" target="21" />
+      <module name="unnamed-platform.service.command-service.command-service-api.main" target="21" />
+      <module name="unnamed-platform.service.command-service.command-service-api.test" target="21" />
+      <module name="unnamed-platform.service.command-service.main" target="21" />
+      <module name="unnamed-platform.service.command-service.test" target="21" />
+      <module name="unnamed-platform.service.command.api" target="21" />
+      <module name="unnamed-platform.service.command.api.main" target="21" />
+      <module name="unnamed-platform.service.command.api.test" target="21" />
+      <module name="unnamed-platform.service.command.command-paper-module" target="21" />
+      <module name="unnamed-platform.service.command.command-paper-module.main" target="21" />
+      <module name="unnamed-platform.service.command.command-paper-module.test" target="21" />
+      <module name="unnamed-platform.service.command.main" target="21" />
       <module name="unnamed-platform.service.command.paper-command-module" target="21" />
       <module name="unnamed-platform.service.command.paper-command-module.main" target="21" />
       <module name="unnamed-platform.service.command.paper-command-module.test" target="21" />
+      <module name="unnamed-platform.service.command.test" target="21" />
+      <module name="unnamed-platform.service.common" target="21" />
+      <module name="unnamed-platform.service.common.main" target="21" />
+      <module name="unnamed-platform.service.common.test" target="21" />
+      <module name="unnamed-platform.service.deploy" target="21" />
+      <module name="unnamed-platform.service.deploy.main" target="21" />
+      <module name="unnamed-platform.service.deploy.test" target="21" />
+      <module name="unnamed-platform.service.friend" target="21" />
+      <module name="unnamed-platform.service.friend.main" target="21" />
+      <module name="unnamed-platform.service.friend.test" target="21" />
+      <module name="unnamed-platform.service.gui" target="21" />
+      <module name="unnamed-platform.service.gui-service" target="21" />
+      <module name="unnamed-platform.service.gui-service.gui-service-api" target="21" />
+      <module name="unnamed-platform.service.gui-service.gui-service-api.main" target="21" />
+      <module name="unnamed-platform.service.gui-service.gui-service-api.test" target="21" />
+      <module name="unnamed-platform.service.gui-service.main" target="21" />
+      <module name="unnamed-platform.service.gui-service.test" target="21" />
+      <module name="unnamed-platform.service.gui.api" target="21" />
+      <module name="unnamed-platform.service.gui.api.main" target="21" />
+      <module name="unnamed-platform.service.gui.api.test" target="21" />
+      <module name="unnamed-platform.service.gui.gui-paper-module.main" target="21" />
+      <module name="unnamed-platform.service.gui.gui-paper-module.test" target="21" />
+      <module name="unnamed-platform.service.gui.gui-paper-plugin" target="21" />
+      <module name="unnamed-platform.service.gui.gui-paper-plugin.main" target="21" />
+      <module name="unnamed-platform.service.gui.gui-paper-plugin.test" target="21" />
+      <module name="unnamed-platform.service.gui.main" target="21" />
+      <module name="unnamed-platform.service.gui.test" target="21" />
+      <module name="unnamed-platform.service.pack" target="21" />
+      <module name="unnamed-platform.service.pack-service" target="21" />
+      <module name="unnamed-platform.service.pack-service.main" target="21" />
+      <module name="unnamed-platform.service.pack-service.pack-service-api" target="21" />
+      <module name="unnamed-platform.service.pack-service.pack-service-api.main" target="21" />
+      <module name="unnamed-platform.service.pack-service.pack-service-api.test" target="21" />
+      <module name="unnamed-platform.service.pack-service.test" target="21" />
+      <module name="unnamed-platform.service.pack.api" target="21" />
+      <module name="unnamed-platform.service.pack.api.main" target="21" />
+      <module name="unnamed-platform.service.pack.api.test" target="21" />
+      <module name="unnamed-platform.service.pack.main" target="21" />
+      <module name="unnamed-platform.service.pack.test" target="21" />
+      <module name="unnamed-platform.service.party" target="21" />
+      <module name="unnamed-platform.service.party.main" target="21" />
+      <module name="unnamed-platform.service.party.test" target="21" />
+      <module name="unnamed-platform.service.permission" target="21" />
+      <module name="unnamed-platform.service.permission-service" target="21" />
+      <module name="unnamed-platform.service.permission-service.main" target="21" />
+      <module name="unnamed-platform.service.permission-service.test" target="21" />
+      <module name="unnamed-platform.service.permission.main" target="21" />
+      <module name="unnamed-platform.service.permission.test" target="21" />
+      <module name="unnamed-platform.service.player-service" target="21" />
+      <module name="unnamed-platform.service.player-service.main" target="21" />
+      <module name="unnamed-platform.service.player-service.player-service-api" target="21" />
+      <module name="unnamed-platform.service.player-service.player-service-api.main" target="21" />
+      <module name="unnamed-platform.service.player-service.player-service-api.test" target="21" />
+      <module name="unnamed-platform.service.player-service.test" target="21" />
+      <module name="unnamed-platform.service.player.api.main" target="21" />
+      <module name="unnamed-platform.service.player.api.test" target="21" />
+      <module name="unnamed-platform.service.player.main" target="21" />
+      <module name="unnamed-platform.service.player.test" target="21" />
+      <module name="unnamed-platform.service.punishment" target="21" />
+      <module name="unnamed-platform.service.punishment.main" target="21" />
+      <module name="unnamed-platform.service.punishment.test" target="21" />
+      <module name="unnamed-platform.service.service-command" target="21" />
+      <module name="unnamed-platform.service.service-command.main" target="21" />
+      <module name="unnamed-platform.service.service-command.service-command-api" target="21" />
+      <module name="unnamed-platform.service.service-command.service-command-api.main" target="21" />
+      <module name="unnamed-platform.service.service-command.service-command-api.test" target="21" />
+      <module name="unnamed-platform.service.service-command.test" target="21" />
+      <module name="unnamed-platform.service.service-common" target="21" />
+      <module name="unnamed-platform.service.service-common.main" target="21" />
+      <module name="unnamed-platform.service.service-common.test" target="21" />
     </bytecodeTargetLevel>
   </component>
 </project>

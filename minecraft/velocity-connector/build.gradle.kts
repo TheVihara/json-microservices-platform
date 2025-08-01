@@ -1,19 +1,20 @@
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+import org.gradle.kotlin.dsl.withType
+
 plugins {
     id("java")
 }
 
-group = "net.unnamed.minecraft"
-version = "unspecified"
-
-repositories {
-    mavenCentral()
-}
-
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
+    implementation(project(":minecraft:velocity-connector:velocity-connector-api"))
+    implementation(project(":common"))
+
+    annotationProcessor("com.velocitypowered:velocity-api:3.4.0-SNAPSHOT")
 }
 
-tasks.test {
-    useJUnitPlatform()
+tasks.withType<ShadowJar> {
+    archiveBaseName.set("VelocityConnector")
+    archiveClassifier.set("AstopiaVelocityPlugin")
+    archiveVersion.set("")
+    destinationDirectory.set(file("$rootDir/velocity-plugins"))
 }

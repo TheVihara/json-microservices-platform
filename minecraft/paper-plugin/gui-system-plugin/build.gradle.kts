@@ -1,0 +1,24 @@
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+import org.gradle.kotlin.dsl.withType
+
+plugins {
+    id("java")
+}
+
+group = "net.unnamed.service.gui.module"
+version = "unspecified"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(project(":minecraft:paper-plugin:gui-system-plugin:gui-system-plugin-api"))
+    compileOnly(project(":minecraft:paper-connector"))
+}
+
+tasks.withType<ShadowJar> {
+    archiveBaseName.set("GuiSystem")
+    archiveClassifier.set("AstopiaPlugin")
+    archiveVersion.set("")
+}

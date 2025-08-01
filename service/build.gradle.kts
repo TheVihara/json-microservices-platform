@@ -2,8 +2,8 @@ subprojects {
     apply(plugin = "java-library")
 
     dependencies {
-        if (project.path != ":service:common") {
-            "implementation"(project(":service:common"))
+        if (project.path != ":service:service-common") {
+            "implementation"(project(":service:service-common"))
         }
     }
 

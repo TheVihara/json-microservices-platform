@@ -1,0 +1,16 @@
+name: GuiSystem
+version: '1.0'
+main: net.astopia.guipaperplugin.GuiPlugin
+description: Gui
+api-version: '1.21.4'
+dependencies:
+  bootstrap:
+    EssentialsA:
+      load: BEFORE
+      required: true
+      join-classpath: true
+  server:
+    EssentialsA:
+      load: BEFORE
+      required: true
+      join-classpath: true

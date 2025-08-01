@@ -1,0 +1,1 @@
+{"id":"command-system","name":"Velocity Command System","version":"1.0.0","authors":[],"dependencies":[{"id":"velocity-connector","optional":false}],"main":"net.astopia.velocitycommandsystem.CommandSystemPlugin"}

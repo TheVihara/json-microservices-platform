@@ -1,3 +1,0 @@
-name: "Command"
-description: "Handles all service commands"
-main-class: "net.unnamed.service.command.CommandService"

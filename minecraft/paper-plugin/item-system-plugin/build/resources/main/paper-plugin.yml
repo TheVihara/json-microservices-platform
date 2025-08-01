@@ -1,0 +1,16 @@
+name: ItemSystem
+version: '1.0'
+main: net.astopia.itemsystem.ItemSystemPlugin
+description: Knowledge
+api-version: '1.21.4'
+dependencies:
+  bootstrap:
+    EssentialsA:
+      load: BEFORE
+      required: true
+      join-classpath: true
+  server:
+    EssentialsA:
+      load: BEFORE
+      required: true
+      join-classpath: true

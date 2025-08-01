@@ -1,0 +1,28 @@
+name: KnowledgeSystem
+version: '1.0'
+main: net.astopia.knowledgesystem.KnowledgeSystemPlugin
+description: Knowledge
+api-version: '1.21.4'
+dependencies:
+  bootstrap:
+    EssentialsA:
+      load: BEFORE
+      required: true
+      join-classpath: true
+    GuiSystem:
+      load: BEFORE
+      required: true
+      join-classpath: true
+  server:
+    EssentialsA:
+      load: BEFORE
+      required: true
+      join-classpath: true
+    GuiSystem:
+      load: BEFORE
+      required: true
+      join-classpath: true
+    ItemSystem:
+      load: BEFORE
+      required: true
+      join-classpath: true
