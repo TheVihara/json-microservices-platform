@@ -1,31 +1,32 @@
 package net.unnamed.service.pack.font.config;
 
-import de.bsommerfeld.jshepherd.annotation.Key;
-import de.bsommerfeld.jshepherd.core.ConfigurablePojo;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
-import net.unnamed.service.pack.font.config.provider.*;
+import net.unnamed.common.config.YamlConfig;
+import net.unnamed.service.pack.font.adapter.*;
 
 import java.util.List;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Getter
 @Setter
-public class FontConfig extends ConfigurablePojo<FontConfig> {
-    @Key("reference")
-    List<ReferenceProviderConfig> referenceFontProviders;
+public class FontConfig extends YamlConfig<FontConfig> {
 
-    @Key("bitmap")
-    List<BitmapProviderConfig> bitmapFontProviders;
+    @JsonProperty("reference")
+    List<ReferenceProviderAdapter> referenceFontProviders;
 
-    @Key("space")
-    List<SpaceProviderConfig> spaceProvider;
+    @JsonProperty("bitmap")
+    List<BitmapProviderAdapter> bitmapFontProviders;
 
-    @Key("true-type")
-    List<TrueTypeProviderConfig> trueTypeFontProviders;
+    @JsonProperty("space")
+    List<SpaceProviderAdapter> spaceProvider;
 
-    @Key("unihex")
-    List<UnihexProviderConfig> unihexFontProviders;
+    @JsonProperty("true-type")
+    List<TrueTypeProviderAdapter> trueTypeFontProviders;
+
+    @JsonProperty("unihex")
+    List<UnihexProviderAdapter> unihexFontProviders;
 }

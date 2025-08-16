@@ -33,7 +33,6 @@ public class CommandSystemPlugin extends JavaPlugin {
         annotationParser = new AnnotationParser(paperCommandManager, CommandSourceStack.class);
         customCommandManager = new CustomCommandManager(annotationParser);
 
-
         Bukkit.getServicesManager().register(CommandApi.class, customCommandManager, this, ServicePriority.Normal);
 
         paperCommandManager.registerCommandPreProcessor(new CustomCommandPreprocessor(customCommandManager));

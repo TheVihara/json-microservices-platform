@@ -1,16 +1,13 @@
 package net.unnamed.service.pack.texture;
 
-import de.bsommerfeld.jshepherd.core.ConfigurationLoader;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import net.unnamed.common.config.YamlConfig;
 import net.unnamed.service.pack.texture.factory.TextureFactory;
 import net.unnamed.service.pack.texture.meta.MetaFactory;
 import net.unnamed.service.pack.texture.meta.config.MetadataConfig;
 import team.unnamed.creative.ResourcePack;
-import team.unnamed.creative.metadata.Metadata;
-import team.unnamed.creative.metadata.MetadataPart;
-import team.unnamed.creative.metadata.animation.AnimationMeta;
 import team.unnamed.creative.texture.Texture;
 
 import java.io.File;
@@ -56,7 +53,8 @@ public class TextureManager {
 
                 if (optionalMetaFile.isPresent()) {
                     File metaFile = optionalMetaFile.get();
-                    foundTexture = foundTexture.meta(metaFactory.createMetadata(ConfigurationLoader.load(metaFile.toPath(), MetadataConfig::new)));
+                    MetadataConfig metadataConfig = YamlConfig.loadSafe(MetadataConfig.class, metaFile.toPath(), MetadataConfig::new);
+                    foundTexture = foundTexture.meta(metaFactory.createMetadata(metadataConfig));
                 }
 
                 resourcePack.texture(foundTexture);

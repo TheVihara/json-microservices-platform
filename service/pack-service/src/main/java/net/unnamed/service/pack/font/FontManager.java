@@ -1,12 +1,11 @@
 package net.unnamed.service.pack.font;
 
 import com.zaxxer.hikari.HikariDataSource;
-import de.bsommerfeld.jshepherd.core.ConfigurationLoader;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
-import net.unnamed.service.pack.api.BitMapFont;
+import net.unnamed.common.config.YamlConfig;
 import net.unnamed.service.pack.api.NegativeFontRegistry;
 import net.unnamed.service.pack.api.dao.BitMapFontDao;
 import net.unnamed.service.pack.font.config.FontConfig;
@@ -15,16 +14,12 @@ import team.unnamed.creative.ResourcePack;
 import team.unnamed.creative.base.Writable;
 import team.unnamed.creative.font.Font;
 import team.unnamed.creative.font.FontProvider;
-import team.unnamed.creative.texture.Texture;
 
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @Slf4j
@@ -107,7 +102,7 @@ public class FontManager {
                 Path filePath = file.toPath();
                 Path relativePath = fontsFolder.relativize(filePath);
                 String fontPath = relativePath.toString().replace(File.separatorChar, '/').replaceAll(".yml", "");
-                FontConfig fontConfig = ConfigurationLoader.load(filePath, FontConfig::new);
+                FontConfig fontConfig = YamlConfig.loadSafe(FontConfig.class, filePath, FontConfig::new);
                 Font foundFont = fontFactory.createFont(
                         "astopia",
                         fontPath,

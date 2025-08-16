@@ -1,20 +1,21 @@
 package net.astopia.paperconnector.api.config;
 
-import de.bsommerfeld.jshepherd.annotation.Key;
-import de.bsommerfeld.jshepherd.core.ConfigurablePojo;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
+import net.astopia.jackson.annotation.JsonProperty;
+import net.unnamed.common.config.YamlConfig;
 import net.unnamed.common.database.MySqlConfig;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Getter
 @Setter
-public class ConnectorConfig extends ConfigurablePojo<ConnectorConfig> {
-    @Key("server-name")
+public class ConnectorConfig extends YamlConfig<ConnectorConfig> {
+
+    @JsonProperty("server-name")
     String serverName = "default";
 
-    @Key("mysql")
+    @JsonProperty("mysql")
     MySqlConfig mySqlConfig = new MySqlConfig();
 }

@@ -1,27 +1,19 @@
 package net.unnamed.service.common;
 
-import de.bsommerfeld.jshepherd.core.ConfigurationLoader;
-import net.unnamed.common.config.CustomYamlPersistenceDelegateFactory;
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
+import net.unnamed.common.config.YamlConfig;
 import net.unnamed.service.common.config.ServiceConfig;
 import net.unnamed.service.common.terminal.Terminal;
 
-import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
 import java.util.concurrent.CountDownLatch;
 
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class ServiceBootstrapper {
-    private static final CustomYamlPersistenceDelegateFactory persistenceDelegateFactory = new CustomYamlPersistenceDelegateFactory();
-    private static ServiceConfig serviceConfig;
+    static ServiceConfig serviceConfig = YamlConfig.loadResourceOnlySafe(ServiceConfig.class, "/service.yml");
 
     public static void main(String[] args) {
         try {
-            InputStream in = ServiceBootstrapper.class.getResourceAsStream("/service.yml");
-            Path tempFile = Files.createTempFile("service", ".yml");
-            Files.copy(in, tempFile, StandardCopyOption.REPLACE_EXISTING);
-            serviceConfig = ConfigurationLoader.load(tempFile, ServiceConfig::new);
-
             Class<?> mainClass = Class.forName(serviceConfig.getMainClass());
             Object instance = mainClass.getDeclaredConstructor().newInstance();
 

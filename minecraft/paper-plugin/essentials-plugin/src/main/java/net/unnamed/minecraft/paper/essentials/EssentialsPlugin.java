@@ -1,9 +1,9 @@
 package net.unnamed.minecraft.paper.essentials;
 
-import de.bsommerfeld.jshepherd.core.ConfigurationLoader;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import net.milkbowl.vault.economy.Economy;
+import net.unnamed.common.config.YamlConfig;
 import net.unnamed.common.database.mysql.MySqlDatabase;
 import net.unnamed.minecraft.paper.essentials.api.EssentialsApi;
 import net.unnamed.minecraft.paper.essentials.api.EssentialsScheduler;
@@ -22,7 +22,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class EssentialsPlugin extends JavaPlugin implements EssentialsApi {
-    EssentialsConfig config = ConfigurationLoader.load(getDataFolder().toPath().resolve("config.yml"), EssentialsConfig::new, true);
+    EssentialsConfig config = YamlConfig.loadSafe(EssentialsConfig.class, getDataFolder().toPath().resolve("config.yml"), EssentialsConfig::new);
     EssentialsScheduler scheduler = new EssentialsScheduler(this);
     MySqlDatabase database = new MySqlDatabase(config.getMySqlConfig());
     PluginManager pluginManager = getServer().getPluginManager();

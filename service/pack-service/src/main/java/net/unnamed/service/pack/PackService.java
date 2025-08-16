@@ -1,6 +1,5 @@
 package net.unnamed.service.pack;
 
-import de.bsommerfeld.jshepherd.core.ConfigurationLoader;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -11,14 +10,13 @@ import net.astopia.commandservice.api.ServiceCommandRegistrationHandler;
 import net.astopia.commandservice.api.extractor.CommandExecutionSenderExtractor;
 import net.astopia.commandservice.api.extractor.CommandSuggestionSenderExecutor;
 import net.astopia.commandservice.api.manager.ServiceCommandManager;
-import net.unnamed.common.config.CustomYamlPersistenceDelegateFactory;
+import net.unnamed.common.config.YamlConfig;
 import net.unnamed.common.database.MySqlConfig;
 import net.unnamed.common.database.mysql.MySqlDatabase;
 import net.unnamed.service.common.PlatformService;
 import net.unnamed.service.pack.command.ReloadPackCommand;
 import org.incendo.cloud.annotations.AnnotationParser;
 import org.incendo.cloud.execution.ExecutionCoordinator;
-import org.incendo.cloud.internal.CommandRegistrationHandler;
 import team.unnamed.creative.ResourcePack;
 import team.unnamed.creative.serialize.minecraft.MinecraftResourcePackWriter;
 
@@ -30,8 +28,7 @@ import java.nio.file.Paths;
 @RequiredArgsConstructor
 @Getter
 public class PackService extends PlatformService {
-    CustomYamlPersistenceDelegateFactory yamlPersistenceDelegateFactory = new CustomYamlPersistenceDelegateFactory();
-    MySqlConfig config = ConfigurationLoader.load(Path.of(".").resolve("config.yml"), MySqlConfig::new);
+    MySqlConfig config = YamlConfig.loadSafe(MySqlConfig.class, Path.of(".").resolve("config.yml"), MySqlConfig::new);
     MySqlDatabase database = new MySqlDatabase(config);
     PackManager packManager = new PackManager(Paths.get("./pack"), database.getDataSource());
     @NonFinal ServiceCommandManager<CommandSender> serviceCommandManager;

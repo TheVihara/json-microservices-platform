@@ -1,19 +1,20 @@
 package net.unnamed.minecraft.paper.module.container;
 
-import de.bsommerfeld.jshepherd.annotation.Key;
-import de.bsommerfeld.jshepherd.core.ConfigurablePojo;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
+import net.astopia.jackson.annotation.JsonProperty;
+import net.unnamed.common.config.YamlConfig;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Getter
 @Setter
-public class ContainerConfig extends ConfigurablePojo<ContainerConfig> {
-    @Key("large-container-title")
+public class ContainerConfig extends YamlConfig<ContainerConfig> {
+
+    @JsonProperty("large-container-title")
     String largeContainerTitle = "Chest";
 
-    @Key("small-container-title")
+    @JsonProperty("small-container-title")
     String smallContainerTitle = "Chest";
 }

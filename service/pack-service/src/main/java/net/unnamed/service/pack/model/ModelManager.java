@@ -1,11 +1,10 @@
 package net.unnamed.service.pack.model;
 
-import de.bsommerfeld.jshepherd.core.ConfigurationLoader;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import net.kyori.adventure.key.Key;
-import net.unnamed.service.pack.item.config.ItemModelConfig;
+import net.unnamed.common.config.YamlConfig;
 import net.unnamed.service.pack.model.config.ModelConfig;
 import net.unnamed.service.pack.model.factory.ModelFactory;
 import team.unnamed.creative.ResourcePack;
@@ -52,7 +51,7 @@ public class ModelManager {
 
             if (file.getName().endsWith(".yml")) {
                 try {
-                    ModelConfig modelConfig = ConfigurationLoader.load(file.toPath(), ModelConfig::new);
+                    ModelConfig modelConfig = YamlConfig.loadSafe(ModelConfig.class, file.toPath(), ModelConfig::new);
                     Path filePath = file.toPath();
                     Path relativePath = dataFolder.relativize(filePath);
                     String modelPath = relativePath.toString().replace(File.separatorChar, '/').replaceAll(".yml", "");

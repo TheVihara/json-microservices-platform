@@ -1,27 +1,18 @@
 package net.unnamed.service.common.config;
 
-import de.bsommerfeld.jshepherd.annotation.Key;
-import de.bsommerfeld.jshepherd.core.ConfigurablePojo;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.Setter;
+import net.unnamed.common.config.YamlConfig;
 
-public class ServiceConfig extends ConfigurablePojo<ServiceConfig> {
-    @Key("name")
-    private String name;
+@Setter
+@Getter
+public class ServiceConfig extends YamlConfig<ServiceConfig> {
 
-    @Key("description")
-    private String description;
+    String name;
 
-    @Key("main-class")
-    private String mainClass;
+    String description;
 
-    public String getName() {
-        return name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public String getMainClass() {
-        return mainClass;
-    }
+    @JsonProperty("main-class")
+    String mainClass;
 }

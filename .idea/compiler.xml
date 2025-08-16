@@ -6,23 +6,6 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.38/57f8f5e02e92a30fd21b80cbd426a4172b5f8e29/lombok-1.18.38.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.auto.service/auto-service/1.1.1/bfeb4c40087b49e23700f074807d3f2a6d36d2d1/auto-service-1.1.1.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.auto.service/auto-service-annotations/1.1.1/da12a15cd058ba90a0ff55357fb521161af4736d/auto-service-annotations-1.1.1.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.auto/auto-common/1.2.1/f6da26895f759010f5f170c8044e84c1b17ef83e/auto-common-1.2.1.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/32.0.1-jre/6e5d51a72d142f2d40a57dfb897188b36a95b489/guava-32.0.1-jre.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.1/1dcf1de382a0bf95a3d8b0849546c88bac1292c9/failureaccess-1.0.1.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/b421526c5f297295adef1c886e5246c39d4ac629/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.33.0/de2b60b62da487644fc11f734e73c8b0b431238f/checker-qual-3.33.0.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.18.0/89b684257096f548fa39a7df9fdaa409d4d4df91/error_prone_annotations-2.18.0.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/2.8/c85270e307e7b822f1086b93689124b89768e273/j2objc-annotations-2.8.jar" />
-        </processorPath>
-        <module name="astopia-platform.common.main" />
-      </profile>
-      <profile name="Gradle Imported" enabled="true">
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.38/57f8f5e02e92a30fd21b80cbd426a4172b5f8e29/lombok-1.18.38.jar" />
         </processorPath>
         <module name="astopia-platform.service.gui-service.gui-service-api.main" />
         <module name="astopia-platform.minecraft.paper-plugin.command-system-plugin.command-system-plugin-api.main" />
@@ -32,11 +15,13 @@
         <module name="astopia-platform.minecraft.paper-plugin.main" />
         <module name="astopia-platform.service.service-common.main" />
         <module name="astopia-platform.service.permission-service.main" />
+        <module name="astopia-platform.minecraft.paper-plugin.npc-system-plugin.main" />
         <module name="astopia-platform.minecraft.paper-connector.main" />
         <module name="astopia-platform.minecraft.paper-plugin.command-system-plugin.main" />
         <module name="astopia-platform.minecraft.paper-plugin.gui-system-plugin.main" />
         <module name="astopia-platform.service.pack-service.pack-service-api.main" />
         <module name="astopia-platform.minecraft.paper-connector.paper-connector-module.container-paper-connector-module.main" />
+        <module name="astopia-platform.minecraft.paper-plugin.animation-system-plugin.main" />
         <module name="astopia-platform.minecraft.paper-plugin.knowledge-system-plugin.main" />
         <module name="astopia-platform.service.player-service.main" />
         <module name="astopia-platform.service.command-service.command-service-api.main" />
@@ -44,6 +29,7 @@
         <module name="astopia-platform.minecraft.paper-plugin.attribute-system-plugin.main" />
         <module name="astopia-platform.minecraft.paper-plugin.essentials-plugin.main" />
         <module name="astopia-platform.minecraft.paper-plugin.gui-system-plugin.gui-system-plugin-api.main" />
+        <module name="astopia-platform.common.main" />
         <module name="astopia-platform.minecraft.paper-plugin.item-system-plugin.main" />
         <module name="astopia-platform.service.command-service.main" />
         <module name="astopia-platform.minecraft.velocity-connector.velocity-connector-api.main" />
@@ -56,19 +42,19 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.38/57f8f5e02e92a30fd21b80cbd426a4172b5f8e29/lombok-1.18.38.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.velocitypowered/velocity-api/3.4.0-SNAPSHOT/8759dee73026653b8c35341369c0535a0713edf4/velocity-api-3.4.0-SNAPSHOT.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.velocitypowered/velocity-api/3.4.0-SNAPSHOT/efa057c97fd313fc654977dc3ef0de7b5b3f9ba9/velocity-api-3.4.0-SNAPSHOT.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.moandjiezana.toml/toml4j/0.7.2/a03337911d0bd2c40932aca3946edb30d0e7d0c/toml4j-0.7.2.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.spongepowered/configurate-gson/4.1.2/3e5c7a0ea73e95ce6139fa72f1b6d36eb531ab81/configurate-gson-4.1.2.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-logger-slf4j/4.23.0/731e2f2532a8b17e00935bed0ebed27a588df264/adventure-text-logger-slf4j-4.23.0.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-minimessage/4.23.0/3230c09453a50090ae354bfc0d8dd6b72026d88/adventure-text-minimessage-4.23.0.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-serializer-ansi/4.23.0/6d7d4d625d6597e82c6221c90c944788382fc206/adventure-text-serializer-ansi-4.23.0.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-serializer-legacy/4.23.0/e9cacd4d98c1ecab249805e8058cf2eece047d5b/adventure-text-serializer-legacy-4.23.0.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-serializer-plain/4.23.0/2331599c8e892fe3996b6a25f85477152a1b2b3d/adventure-text-serializer-plain-4.23.0.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-serializer-json/4.23.0/955b9e7560304cc32ac489832fe3db9931f20b1/adventure-text-serializer-json-4.23.0.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-api/4.23.0/f6b5b75465f7112dbaf38dd8cfdc5f6b906c53a0/adventure-api-4.23.0.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-key/4.23.0/be07b3e282f9dbc1c0b24a65f0d442ebc504d4d/adventure-key-4.23.0.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-serializer-commons/4.23.0/e3658b807ae4e67cbbf4a874e3ba8acdd54da6f4/adventure-text-serializer-commons-4.23.0.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-serializer-gson/4.23.0/bf81a8f6f9509e2c826fac29a0e580e8c377ba37/adventure-text-serializer-gson-4.23.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-logger-slf4j/4.24.0/c0e71d049e01b5f98f1ff5e01d0cb5e2db61a11e/adventure-text-logger-slf4j-4.24.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-minimessage/4.24.0/64547cb2485d5fc8007aaf3bab0e75108745f1b6/adventure-text-minimessage-4.24.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-serializer-ansi/4.24.0/db289da4f512440a4f134a121acd98ee4a2dfa29/adventure-text-serializer-ansi-4.24.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-serializer-legacy/4.24.0/5361cdc81313bdd83aae0ce792e103e551c7dbec/adventure-text-serializer-legacy-4.24.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-serializer-plain/4.24.0/dc075cfc900a6660c1f20fc29650f322a85754a2/adventure-text-serializer-plain-4.24.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-serializer-json/4.24.0/303b4fa233fc60b025a22a399049c726640d004c/adventure-text-serializer-json-4.24.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-api/4.24.0/af2ff93942f237befc88e44140229afcaf322d99/adventure-api-4.24.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-key/4.24.0/ac70a5ba3c5485658da032044f127f824613f63a/adventure-key-4.24.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-serializer-commons/4.24.0/9f5a467ba9db7946139a22d19187d678112546b3/adventure-text-serializer-commons-4.24.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kyori/adventure-text-serializer-gson/4.24.0/23ef45e010ac5f4be65d114f14d621669cee6fca/adventure-text-serializer-gson-4.24.0.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.10.1/b3add478d4382b78ea20b1671390a858002feb6c/gson-2.10.1.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.inject/guice/6.0.0/9b422c69c4fa1ea95b2615444a94fede9b02fc40/guice-6.0.0.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/31.0.1-jre/119ea2b2bc205b138974d351777b20f02b92704b/guava-31.0.1-jre.jar" />

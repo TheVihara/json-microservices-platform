@@ -3,7 +3,7 @@ package net.unnamed.service.pack.texture.meta;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import net.unnamed.service.pack.texture.meta.config.AnimationMetaConfig;
+import net.unnamed.service.pack.texture.meta.config.AnimationMetaAdapter;
 import net.unnamed.service.pack.texture.meta.config.MetadataConfig;
 import team.unnamed.creative.metadata.Metadata;
 import team.unnamed.creative.metadata.MetadataPart;
@@ -22,9 +22,9 @@ public class MetaFactory {
         return builder.build();
     }
 
-    public MetadataPart createAnimationPart(AnimationMetaConfig metaConfig) {
+    public MetadataPart createAnimationPart(AnimationMetaAdapter animationMetaAdapter) {
         return AnimationMeta.animation()
-                .frameTime(metaConfig.getFrameTime())
+                .frameTime(animationMetaAdapter.getFrameTime())
                 .build();
     }
 }

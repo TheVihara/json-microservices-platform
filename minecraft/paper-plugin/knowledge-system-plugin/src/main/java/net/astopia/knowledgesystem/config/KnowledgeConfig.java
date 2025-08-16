@@ -1,9 +1,9 @@
 package net.astopia.knowledgesystem.config;
 
-import de.bsommerfeld.jshepherd.annotation.Key;
-import de.bsommerfeld.jshepherd.core.ConfigurablePojo;
+import net.astopia.jackson.annotation.JsonProperty;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import net.unnamed.common.config.YamlConfig;
 import org.bukkit.Material;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -11,19 +11,17 @@ import org.bukkit.Material;
 @Getter
 @Setter
 @AllArgsConstructor
-public class KnowledgeConfig extends ConfigurablePojo<KnowledgeConfig> {
-    @Key("key")
+public class KnowledgeConfig extends YamlConfig<KnowledgeConfig> {
+
     String key;
 
-    @Key("display-name")
+    @JsonProperty("display-name")
     String displayName;
 
-    @Key("material")
     Material material;
 
-    @Key("wiki-url")
+    @JsonProperty("wiki-url")
     String wikiUrl;
 
-    @Key("position")
     int position;
 }

@@ -1,6 +1,5 @@
 package net.unnamed.minecraft.paper.essentials.chat;
 
-import de.bsommerfeld.jshepherd.core.ConfigurationLoader;
 import io.papermc.paper.chat.ChatRenderer;
 import io.papermc.paper.event.player.AsyncChatEvent;
 import me.clip.placeholderapi.PlaceholderAPI;
@@ -8,6 +7,7 @@ import net.kyori.adventure.audience.Audience;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
+import net.unnamed.common.config.YamlConfig;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -22,7 +22,8 @@ public class ChatManager {
     private final MiniMessage miniMessage = MiniMessage.miniMessage();
 
     public ChatManager(Path dataFolder) {
-        this.config = ConfigurationLoader.load(
+        this.config = YamlConfig.loadSafe(
+                ChatConfig.class,
                 dataFolder.resolve("chat.yml"),
                 ChatConfig::new
         );

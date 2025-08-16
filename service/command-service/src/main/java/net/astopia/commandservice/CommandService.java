@@ -8,13 +8,10 @@ import net.astopia.commandservice.api.packet.CommandSuggestionResponsePacket;
 import net.astopia.commandservice.api.packet.RegisterCommandPacket;
 import net.astopia.commandservice.listener.CommandExecutionListener;
 import net.astopia.commandservice.listener.CommandSuggestionListener;
-import net.unnamed.common.config.CustomYamlPersistenceDelegateFactory;
 import net.unnamed.service.common.PlatformService;
 
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class CommandService extends PlatformService {
-    CustomYamlPersistenceDelegateFactory yamlPersistenceDelegateFactory = new CustomYamlPersistenceDelegateFactory();
-
     @Override
     public void onLoad() {
         packetRegistry.subscribe("command_service.packets");

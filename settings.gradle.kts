@@ -27,6 +27,7 @@ include("minecraft:paper-plugin:item-system-plugin")
 include("minecraft:paper-plugin:item-system-plugin:item-system-plugin-api")
 include("minecraft:paper-plugin:gui-system-plugin")
 include("minecraft:paper-plugin:gui-system-plugin:gui-system-plugin-api")
+include("minecraft:paper-plugin:npc-system-plugin")
 
 // SERVICES
 include("service")
@@ -45,3 +46,4 @@ include("minecraft:paper-plugin:command-system-plugin:command-system-plugin-api"
 include("minecraft:velocity-plugin")
 include("minecraft:velocity-plugin:velocity-command-system-plugin")
 include("minecraft:velocity-connector:velocity-connector-api")
+include("minecraft:paper-plugin:animation-system-plugin")

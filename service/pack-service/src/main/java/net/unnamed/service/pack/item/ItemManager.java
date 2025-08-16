@@ -1,10 +1,10 @@
 package net.unnamed.service.pack.item;
 
-import de.bsommerfeld.jshepherd.core.ConfigurationLoader;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import net.kyori.adventure.key.Key;
+import net.unnamed.common.config.YamlConfig;
 import net.unnamed.service.pack.item.config.ItemModelConfig;
 import net.unnamed.service.pack.item.factory.ItemFactory;
 import team.unnamed.creative.ResourcePack;
@@ -44,7 +44,7 @@ public class ItemManager {
 
             if (file.getName().endsWith(".yml")) {
                 try {
-                    ItemModelConfig itemModelConfig = ConfigurationLoader.load(file.toPath(), ItemModelConfig::new);
+                    ItemModelConfig itemModelConfig = YamlConfig.loadSafe(ItemModelConfig.class, file.toPath(), ItemModelConfig::new);
 
                     String itemName = file.getName().substring(0, file.getName().length() - 4);
                     Key key = Key.key(namespace, itemName);

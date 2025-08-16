@@ -1,13 +1,16 @@
 package net.unnamed.minecraft.paper.essentials.chat;
 
-import de.bsommerfeld.jshepherd.annotation.Key;
-import de.bsommerfeld.jshepherd.core.ConfigurablePojo;
+import net.astopia.jackson.annotation.JsonProperty;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.experimental.FieldDefaults;
+import net.unnamed.common.config.YamlConfig;
 
-public class ChatConfig extends ConfigurablePojo<ChatConfig> {
-    @Key("chat-format")
-    private String format = "%player_name%: %message%";
-
-    public String getFormat() {
-        return format;
-    }
+@FieldDefaults(level = AccessLevel.PRIVATE)
+@Getter
+@Setter
+public class ChatConfig extends YamlConfig<ChatConfig> {
+    @JsonProperty("chat-format")
+    String format = "%player_name%: %message%";
 }

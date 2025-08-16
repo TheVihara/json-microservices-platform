@@ -1,14 +1,16 @@
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
-import org.gradle.kotlin.dsl.withType
 
 plugins {
     id("java")
 }
 
 dependencies {
-    implementation(project(":common"))
-    api(project(":minecraft:paper-connector:paper-connector-api"))
-    implementation("com.github.bsommerfeld.jshepherd:core:3.3.1")
+    implementation(project(path = ":common", configuration = "shadow"))
+    api(project(":minecraft:paper-connector:paper-connector-api")) {
+        exclude(group = "com.fasterxml.jackson.core")
+        exclude(group = "com.fasterxml.jackson.dataformat")
+        exclude(group = "com.fasterxml.jackson.databind")
+    }
 }
 
 tasks.withType<ShadowJar> {

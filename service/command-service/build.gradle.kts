@@ -1,5 +1,4 @@
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
-import org.gradle.kotlin.dsl.withType
 
 plugins {
     id("java")
@@ -7,7 +6,6 @@ plugins {
 
 dependencies {
     implementation(project(":service:command-service:command-service-api"))
-    implementation("com.github.bsommerfeld.jshepherd:core:3.3.1")
     implementation("org.mariadb.jdbc:mariadb-java-client:3.5.4")
 }
 

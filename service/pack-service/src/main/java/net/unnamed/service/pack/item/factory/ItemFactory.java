@@ -6,7 +6,7 @@ import lombok.experimental.FieldDefaults;
 import net.kyori.adventure.key.Key;
 import net.unnamed.service.pack.item.ItemModelType;
 import net.unnamed.service.pack.item.ItemProperty;
-import net.unnamed.service.pack.item.config.ItemModelCaseConfig;
+import net.unnamed.service.pack.item.config.ItemModelCase;
 import net.unnamed.service.pack.item.config.ItemModelConfig;
 import team.unnamed.creative.item.Item;
 import team.unnamed.creative.item.ItemModel;
@@ -31,9 +31,9 @@ public class ItemFactory {
         return ItemModel.reference(Key.key(itemModelConfig.getModel()));
     }
 
-    public SelectItemModel.Case createSelectItemCase(ItemModelCaseConfig itemModelCaseConfig) {
-        List<String> when = itemModelCaseConfig.getWhen();
-        ItemModelConfig itemModelConfig = itemModelCaseConfig.getModel();
+    public SelectItemModel.Case createSelectItemCase(ItemModelCase itemModelCase) {
+        List<String> when = itemModelCase.getWhen();
+        ItemModelConfig itemModelConfig = itemModelCase.getModel();
         return SelectItemModel.Case._case(createItemModel(itemModelConfig), when);
     }
 

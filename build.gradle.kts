@@ -25,13 +25,9 @@ subprojects {
 
         dependencies {
             if (project.path != ":common") {
-                "compileOnly"(project(":common"))
+                "compileOnly"(project(path = ":common", configuration = "shadow"))
             }
-            "compileOnly"("com.github.bsommerfeld.jshepherd:core:3.3.1")
-            "compileOnly"("com.github.bsommerfeld.jshepherd:yaml:3.3.1")
             "compileOnly"("org.projectlombok:lombok:1.18.38")
-            "implementation"("org.yaml:snakeyaml:2.4")
-
             "annotationProcessor"("org.projectlombok:lombok:1.18.38")
         }
 

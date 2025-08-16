@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/minecraft/paper-connector/paper-connector-module" />
             <option value="$PROJECT_DIR$/minecraft/paper-connector/paper-connector-module/container-paper-connector-module" />
             <option value="$PROJECT_DIR$/minecraft/paper-plugin" />
+            <option value="$PROJECT_DIR$/minecraft/paper-plugin/animation-system-plugin" />
             <option value="$PROJECT_DIR$/minecraft/paper-plugin/attribute-system-plugin" />
             <option value="$PROJECT_DIR$/minecraft/paper-plugin/command-system-plugin" />
             <option value="$PROJECT_DIR$/minecraft/paper-plugin/command-system-plugin/command-system-plugin-api" />
@@ -26,6 +27,7 @@
             <option value="$PROJECT_DIR$/minecraft/paper-plugin/item-system-plugin" />
             <option value="$PROJECT_DIR$/minecraft/paper-plugin/item-system-plugin/item-system-plugin-api" />
             <option value="$PROJECT_DIR$/minecraft/paper-plugin/knowledge-system-plugin" />
+            <option value="$PROJECT_DIR$/minecraft/paper-plugin/npc-system-plugin" />
             <option value="$PROJECT_DIR$/minecraft/velocity-connector" />
             <option value="$PROJECT_DIR$/minecraft/velocity-connector/velocity-connector-api" />
             <option value="$PROJECT_DIR$/minecraft/velocity-plugin" />

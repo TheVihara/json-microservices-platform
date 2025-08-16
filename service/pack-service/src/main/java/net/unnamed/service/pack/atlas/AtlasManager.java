@@ -1,16 +1,15 @@
 package net.unnamed.service.pack.atlas;
 
-import de.bsommerfeld.jshepherd.core.ConfigurationLoader;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import net.kyori.adventure.key.Key;
+import net.unnamed.common.config.YamlConfig;
 import net.unnamed.service.pack.atlas.config.AtlasConfig;
 import team.unnamed.creative.ResourcePack;
 import team.unnamed.creative.atlas.Atlas;
 import team.unnamed.creative.atlas.AtlasSource;
 
-import java.io.File;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +21,7 @@ public class AtlasManager {
     static Logger logger = Logger.getLogger("AtlasManager");
 
     public void scan(ResourcePack resourcePack, Path packFolder) {
-        AtlasConfig atlasConfig = ConfigurationLoader.load(packFolder.resolve("atlas.yml"), AtlasConfig::new);
+        AtlasConfig atlasConfig = YamlConfig.loadSafe(AtlasConfig.class, packFolder.resolve("atlas.yml"), AtlasConfig::new);
         List<String> textures = atlasConfig.getTextures();
 
         List<AtlasSource> atlasSources = new ArrayList<>();

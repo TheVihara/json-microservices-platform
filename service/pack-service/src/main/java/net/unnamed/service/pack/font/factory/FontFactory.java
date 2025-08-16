@@ -6,8 +6,8 @@ import lombok.experimental.FieldDefaults;
 import net.kyori.adventure.key.Key;
 import net.unnamed.service.pack.api.BitMapFont;
 import net.unnamed.service.pack.api.dao.BitMapFontDao;
+import net.unnamed.service.pack.font.adapter.*;
 import net.unnamed.service.pack.font.config.FontConfig;
-import net.unnamed.service.pack.font.config.provider.*;
 import team.unnamed.creative.ResourcePack;
 import team.unnamed.creative.base.Vector2Float;
 import team.unnamed.creative.font.Font;
@@ -35,14 +35,14 @@ public class FontFactory {
 
     public void duplicateFont(ResourcePack resourcePack, Font font, FontConfig fontConfig) {
         Map<String, Font> duplicatedFonts = new HashMap<>();
-        List<BitmapProviderConfig> bitmapFontProviders = fontConfig.getBitmapFontProviders();
-        List<ReferenceProviderConfig> referenceFontProviders = fontConfig.getReferenceFontProviders();
-        List<SpaceProviderConfig> spaceFontProviders = fontConfig.getSpaceProvider();
-        List<TrueTypeProviderConfig> trueTypeProviderConfigs = fontConfig.getTrueTypeFontProviders();
-        List<UnihexProviderConfig> unihexProviderConfigs = fontConfig.getUnihexFontProviders();
+        List<BitmapProviderAdapter> bitmapFontProviders = fontConfig.getBitmapFontProviders();
+        List<ReferenceProviderAdapter> referenceFontProviders = fontConfig.getReferenceFontProviders();
+        List<SpaceProviderAdapter> spaceFontProviders = fontConfig.getSpaceProvider();
+        List<TrueTypeProviderAdapter> trueTypeProviderAdapters = fontConfig.getTrueTypeFontProviders();
+        List<UnihexProviderAdapter> unihexProviderAdapters = fontConfig.getUnihexFontProviders();
 
         if (bitmapFontProviders != null) {
-            for (BitmapProviderConfig providerConfig : bitmapFontProviders) {
+            for (BitmapProviderAdapter providerConfig : bitmapFontProviders) {
                 if (providerConfig.getOffset() == null) {
                     continue;
                 }
@@ -66,8 +66,8 @@ public class FontFactory {
             }
         }
 
-        if (trueTypeProviderConfigs != null) {
-            for (TrueTypeProviderConfig providerConfig : trueTypeProviderConfigs) {
+        if (trueTypeProviderAdapters != null) {
+            for (TrueTypeProviderAdapter providerConfig : trueTypeProviderAdapters) {
                 if (providerConfig.getOffset() == null) {
                     continue;
                 }
@@ -111,7 +111,7 @@ public class FontFactory {
         List<FontProvider> providers = new ArrayList<>();
 
         if (fontConfig.getBitmapFontProviders() != null) {
-            for (BitmapProviderConfig providerConfig : fontConfig.getBitmapFontProviders()) {
+            for (BitmapProviderAdapter providerConfig : fontConfig.getBitmapFontProviders()) {
                 if (providerConfig.getKey() != null) {
                     bitMapFontDao.save(new BitMapFont(
                             providerConfig.getKey(),
@@ -130,19 +130,19 @@ public class FontFactory {
         }
 
         if (fontConfig.getReferenceFontProviders() != null) {
-            for (ReferenceProviderConfig providerConfig : fontConfig.getReferenceFontProviders()) {
+            for (ReferenceProviderAdapter providerConfig : fontConfig.getReferenceFontProviders()) {
                 providers.add(this.createReferenceFontProvider(providerConfig.getNamespace(), providerConfig.getValue()));
             }
         }
 
         if (fontConfig.getSpaceProvider() != null) {
-            for (SpaceProviderConfig providerConfig : fontConfig.getSpaceProvider()) {
+            for (SpaceProviderAdapter providerConfig : fontConfig.getSpaceProvider()) {
                 providers.add(this.createSpaceFontProvider(providerConfig.getAdvances()));
             }
         }
 
         if (fontConfig.getTrueTypeFontProviders() != null) {
-            for (TrueTypeProviderConfig providerConfig : fontConfig.getTrueTypeFontProviders()) {
+            for (TrueTypeProviderAdapter providerConfig : fontConfig.getTrueTypeFontProviders()) {
                 providers.add(this.createTrueTypeFontProvider(
                         providerConfig.getNamespace(),
                         providerConfig.getValue(),
@@ -156,7 +156,7 @@ public class FontFactory {
         }
 
         if (fontConfig.getUnihexFontProviders() != null) {
-            for (UnihexProviderConfig providerConfig : fontConfig.getUnihexFontProviders()) {
+            for (UnihexProviderAdapter providerConfig : fontConfig.getUnihexFontProviders()) {
                 providers.add(this.createUnihexFontProvider(providerConfig.getNamespace(), providerConfig.getValue(), List.of())); // TODO: impl size overrides
             }
         }

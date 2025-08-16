@@ -1,0 +1,36 @@
+name: AnimationSystem
+version: '1.0'
+main: net.astopia.animationsystem.AnimationSystemPlugin
+description: Animations
+api-version: '1.21.4'
+dependencies:
+  bootstrap:
+    EssentialsA:
+      load: BEFORE
+      required: true
+      join-classpath: true
+    GuiSystem:
+      load: BEFORE
+      required: true
+      join-classpath: true
+  server:
+    EssentialsA:
+      load: BEFORE
+      required: true
+      join-classpath: true
+    GuiSystem:
+      load: BEFORE
+      required: true
+      join-classpath: true
+    ItemSystem:
+      load: BEFORE
+      required: true
+      join-classpath: true
+    Citizens:
+      load: BEFORE
+      required: true
+      join-classpath: true
+    Multiverse-Core:
+      load: BEFORE
+      required: true
+      join-classpath: true

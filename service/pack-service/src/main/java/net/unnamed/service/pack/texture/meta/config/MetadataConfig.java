@@ -1,16 +1,14 @@
 package net.unnamed.service.pack.texture.meta.config;
 
-import de.bsommerfeld.jshepherd.annotation.Key;
-import de.bsommerfeld.jshepherd.core.ConfigurablePojo;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
+import net.unnamed.common.config.YamlConfig;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Getter
 @Setter
-public class MetadataConfig extends ConfigurablePojo<MetadataConfig> {
-    @Key("animation")
-    AnimationMetaConfig animation;
+public class MetadataConfig extends YamlConfig<MetadataConfig> {
+    AnimationMetaAdapter animation;
 }
